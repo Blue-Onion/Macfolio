@@ -10,7 +10,7 @@ const FONT_WEIGHT = {
     title: { min: 500, max: 900, default: 500 }
 }
 const setUpHover = (cont, type) => {
-    if (!cont) return;
+    if (!cont) return()=>{};
 
     const letters = cont.querySelectorAll("span");
     const { min, max, default: base } = FONT_WEIGHT[type];
@@ -29,7 +29,7 @@ const setUpHover = (cont, type) => {
 
         letters.forEach((letter, i) => {
             const { left: l, width: w } = letter.getBoundingClientRect();
-            const letterCenter = l - left + w / 2; // Relative position of letter center
+            const letterCenter = l - left + w / 2;
             const distance = Math.abs(mouseX - letterCenter);
             const intensity = Math.exp(-(distance ** 2) / 20000);
             const weight = min + (max - min) * intensity;

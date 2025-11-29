@@ -1,12 +1,14 @@
-import Navbar from '@/components/Navbar'
+
 import React from 'react'
-import { Welcome } from '.'
+import { Welcome,Dock,Navbar } from '.'
+
 
 const page = () => {
   return (
     <main>
       <Navbar/>
       <Welcome/>
+      <Dock/>
     </main>
   )
 }
