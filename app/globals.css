@@ -80,10 +80,21 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-2 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+      display: flex;
+      border-radius: 27px;
+
+
+      padding: 2px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(30px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+
+      box-shadow: 0 6px 6px #00000033, 0 0 20px #0000001a;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
     }
 
     .tooltip {
@@ -91,7 +102,7 @@ body {
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-14 z-10 3xl:size-20 cursor-pointer;
 
       img {
         @apply object-cover object-center;
