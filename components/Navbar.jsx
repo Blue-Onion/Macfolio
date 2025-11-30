@@ -1,10 +1,12 @@
+"use client"
 import { navIcons, navLinks } from '@/data'
+import useWindowStore from '@/store/window'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 
 
 const Navbar = () => {
-
+    const { openWindow } = useWindowStore()
     return (
         <header>
             <nav>
@@ -21,7 +23,8 @@ const Navbar = () => {
                     <ul>
                         {
                             navLinks.map((item) => {
-                                return <li key={item.id}>
+                                return <li className='cursor-pointer' onClick={() => openWindow(item.type)} key={item.id}>
+
                                     {item.name}
                                 </li>
                             })

@@ -10,6 +10,7 @@ import Welcome from '@/components/Welcome'
 import Dock from '@/components/Dock'
 
 import Arc from '@/windows/Arc'
+import Resume from '@/windows/Resume'
 
 gsap.registerPlugin(Draggable)
 
@@ -20,8 +21,8 @@ const page = () => {
       <Welcome/>
       <Dock/>
       <Terminal/>
-
       <Arc/>
+      <Resume/>
     </main>
   )
 }
