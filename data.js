@@ -34,37 +34,37 @@ const navIcons = [
 
 const dockApps = [
   {
-    id: 1,
+    id: "finder",
     name: "Portfolio", // was "Finder"
     icon: "finder.jpg",
     canOpen: true,
   },
   {
-    id: 2,
-    name: "Articles", // was "Safari"
+    id: "arc",
+    name: "Articles", // was "arc"
     icon: "arc.png",
     canOpen: true,
   },
   {
-    id: 3,
+    id: "photos",
     name: "Gallery", // was "Photos"
     icon: "photos.jpg",
     canOpen: true,
   },
   {
-    id:4,
+    id: "contact",
     name: "Contact", // or "Get in touch"
     icon: "contact.jpg",
     canOpen: true,
   },
   {
-    id: 5,
+    id: "terminal",
     name: "Skills", // was "Terminal"
-icon:"terminal.jpg",
+    icon: "terminal.jpg",
     canOpen: true,
   },
   {
-    id: 6,
+    id: "Archive",
     name: "Archive", // was "Trash"
     icon: "trash.jpg",
     canOpen: false,
@@ -488,16 +488,16 @@ export const locations = {
 };
 
 const INITIAL_Z_INDEX = 1000;
-
 const WINDOW_CONFIG = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  arc: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
+
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
