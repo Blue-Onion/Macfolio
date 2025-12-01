@@ -23,7 +23,7 @@ const Navbar = () => {
                     <ul>
                         {
                             navLinks.map((item) => {
-                                return <li className='cursor-pointer' onClick={() => openWindow(item.type)} key={item.id}>
+                                return <li className='cursor-pointer hover:underline transition-all' onClick={() => openWindow(item.type)} key={item.id}>
 
                                     {item.name}
                                 </li>
