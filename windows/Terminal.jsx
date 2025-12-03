@@ -4,13 +4,17 @@ import WindowWrapper from '@/hoc/WindowWrapper'
 import { Check } from 'lucide-react'
 import React from 'react'
 import WindowControls from './WindowControls'
+import Image from 'next/image'
 
 const Terminal = () => {
   return (
     <>
-      <div id='window-header'>
-        <WindowControls target='terminal'/>
-        <h2>Tech Stack 80x24</h2>
+      <div id='' className='text-gray-600 border-b gap-5 border-gray-200 p-2 flex'>
+        <WindowControls target='terminal' />
+
+        <h3 className='font-extrabold'>
+          Tech Stack
+        </h3>
 
       </div>
       <div className="techstack">

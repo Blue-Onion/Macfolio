@@ -16,13 +16,14 @@ const WindowControls = ({ target }) => {
         onMouseLeave={() => setHover(null)}
         onClick={() => closeWindow(target)}
       >
-        {hover === "close" && <Image src="/images/close.png" alt="close" width={10} height={10} className="font-bold  pointer-events-none" />}
+        {hover === "close" && <Image src="/images/close.png" alt="x" width={10} height={10} className="font-bold  pointer-events-none" />}
       </div>
 
       <div
         className="minimize flex items-center justify-center"
         onMouseEnter={() => setHover("minimize")}
         onMouseLeave={() => setHover(null)}
+        onClick={() => closeWindow(target)}
       >
         {hover === "minimize" && <Minus size={10} className="font-bold  pointer-events-none" />}
       </div>
