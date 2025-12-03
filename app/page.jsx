@@ -12,6 +12,7 @@ import Dock from '@/components/Dock'
 import Arc from '@/windows/Arc'
 import Resume from '@/windows/Resume'
 import Finder from '@/windows/Finder'
+import Contact from '@/windows/Contact'
 
 gsap.registerPlugin(Draggable)
 
@@ -25,6 +26,7 @@ const page = () => {
       <Arc/>
       <Resume/>
       <Finder/>
+      <Contact/>
     </main>
   )
 }
