@@ -231,7 +231,7 @@ const WORK_LOCATION = {
     {
       id: 5,
       name: "Nike Ecommerce Website Application",
-      icon: "/images/folder.png",
+      icon: "/images/folder.jpg",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
       windowPosition: "top-[5vh] left-5", // optional: Finder window position
@@ -253,7 +253,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "nike.com",
-          icon: "/images/safari.png",
+          icon: "/images/arc.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
@@ -284,7 +284,7 @@ const WORK_LOCATION = {
     {
       id: 6,
       name: "AI Resume Analyzer",
-      icon: "/images/folder.png",
+      icon: "/images/folder.jpg",
       kind: "folder",
       position: "top-52 right-80",
       windowPosition: "top-[20vh] left-7",
@@ -306,7 +306,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "ai-resume-analyzer.com",
-          icon: "/images/safari.png",
+          icon: "/images/arc.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
@@ -337,7 +337,7 @@ const WORK_LOCATION = {
     {
       id: 7,
       name: "Food Delivery App",
-      icon: "/images/folder.png",
+      icon: "/images/folder.jpg",
       kind: "folder",
       position: "top-10 left-80",
       windowPosition: "top-[33vh] left-7",
@@ -359,7 +359,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "food-delivery-app.com",
-          icon: "/images/safari.png",
+          icon: "/images/arc.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
@@ -495,7 +495,7 @@ export const locations = {
   trash: TRASH_LOCATION,
 };
 
-const INITIAL_Z_INDEX = 1000;
+const INITIAL_Z_INDEX = 50;
 const WINDOW_CONFIG = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },

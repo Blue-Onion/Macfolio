@@ -7,7 +7,7 @@ body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/wallpaper1.png");
+  background-image: url("/images/wallpaper.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -80,7 +80,7 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-2 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-2 left-1/2 -translate-x-1/2 z-500 select-none max-sm:hidden;
 
     .dock-container {
       display: flex;
@@ -98,7 +98,7 @@ body {
     }
 
     .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+      @apply py-1! px-3! w-fit! text-center! text-xs! rounded-md! bg-blue-200! text-blue-900! shadow-2xl;
     }
 
     .dock-icon {
@@ -317,7 +317,7 @@ body {
   }
 
   #finder {
-    @apply absolute w-3xl left-40 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
+    @apply absolute w-3xl flex flex-col  left-40 bg-white top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
 
     .sidebar {
       @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
@@ -330,21 +330,21 @@ body {
         @apply space-y-1;
 
         .active {
-          @apply bg-blue-100 text-blue-700;
+          @apply bg-gray-200 rounded-xl text-blue-500;
         }
 
         .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
+          @apply text-gray-700 rounded-xl ;
         }
 
         li {
-          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+          @apply flex items-center gap-2 px-1 py-2 rounded-md cursor-pointer transition-colors;
         }
       }
     }
 
     .content {
-      @apply flex-1 p-8 bg-white max-w-2xl relative;
+      @apply flex-1 p-8  max-w-2xl relative;
 
       li {
         @apply absolute flex items-center flex-col gap-3;
@@ -403,4 +403,47 @@ body {
       }
     }
   }
+}
+.tahoe-sidebar {
+    width: 240px; /* Standard sidebar width */
+    padding: 20px 0;
+    margin: 10px 0 10px 10px; /* Creates the "floating" effect with margin from window edge */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    backdrop-filter: blur(20px) saturate(180%); /* Key liquid glass effect */
+    border-radius: 8px; /* Rounded corners for the floating panel */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* Add a very subtle "liquid" reflection/gradient here if desired for extra realism */
+}
+
+.tahoe-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tahoe-sidebar li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: background-color 0.2s;
+}
+
+.tahoe-sidebar li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Optional: for a dark mode look */
+@media (prefers-color-scheme: dark) {
+    .tahoe-sidebar {
+        background-color: rgba(25, 25, 25, 0.1);
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .tahoe-sidebar li {
+        color: #f0f0f0;
+    }
 }

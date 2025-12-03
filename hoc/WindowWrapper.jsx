@@ -42,7 +42,7 @@ return ()=>instance.kill()
         style={{
           zIndex
         }}
-        className='absolute shadow-2xl rounded-3xl'
+        className='absolute shadow-2xl drop-shadow-2xl rounded-3xl'
       >
         <Component {...props} />
       </section>

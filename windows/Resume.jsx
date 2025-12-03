@@ -18,10 +18,7 @@ const Page = dynamic(
 // Configure PDF.js worker (only on client side)
 if (typeof window !== 'undefined') {
     import('react-pdf').then((mod) => {
-        mod.pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-            'pdfjs-dist/build/pdf.worker.min.mjs',
-            import.meta.url,
-        ).toString()
+        mod.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${mod.pdfjs.version}/build/pdf.worker.min.mjs`
     })
 }
 const Resume = () => {
