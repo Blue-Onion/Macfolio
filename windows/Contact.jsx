@@ -16,14 +16,13 @@ const Contact = () => {
                 <WindowControls target="contact" />
             </div>
 
-
             <div className="space-y-6">
 
 
                 <div className="flex justify-center">
                     <div className="rounded-full overflow-hidden border border-gray-300 shadow-xl">
                         <Image
-                            src="/images/adrian.jpg"
+                            src="/images/me.jpeg"
                             alt="contact"
                             width={140}
                             height={140}
