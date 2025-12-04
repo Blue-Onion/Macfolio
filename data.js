@@ -176,7 +176,7 @@ const LIBRARY_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/gal1.png",
+      imageUrl: "/images/me.jpeg",
     },
     {
       id: 2,
@@ -185,7 +185,7 @@ const LIBRARY_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 right-20",
-      imageUrl: "/images/gal2.png",
+      imageUrl: "/images/Supernova.jpeg",
     },
     {
       id: 3,
@@ -194,7 +194,7 @@ const LIBRARY_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-40 left-40",
-      imageUrl: "/images/gal3.png",
+      imageUrl: "/images/hackcbs2.jpeg",
     },
     {
       id: 4,
@@ -203,7 +203,7 @@ const LIBRARY_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-52 right-80",
-      imageUrl: "/images/gal4.png",
+      imageUrl: "/images/con.jpeg",
     },
   ],
 };
@@ -222,7 +222,7 @@ const MEMORIES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-5 left-10",
-      imageUrl: "/images/gal1.png",
+      imageUrl: "/images/Con.jpeg",
     },
     {
       id: 2,
@@ -231,7 +231,7 @@ const MEMORIES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/gal2.png",
+      imageUrl: "/images/hackcbs2.jpeg",
     },
     {
       id: 3,
@@ -240,7 +240,16 @@ const MEMORIES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/gal3.png",
+      imageUrl: "/images/man3.jpeg",
+    },
+    {
+      id: 4,
+      name: "Graduation Day",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-52 left-80",
+      imageUrl: "/images/me.jpeg",
     },
   ],
 };
@@ -259,7 +268,7 @@ const PLACES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/gal1.png",
+      imageUrl: "/images/Supernova.jpeg",
     },
     {
       id: 2,
@@ -268,7 +277,7 @@ const PLACES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-20 left-80",
-      imageUrl: "/images/gal2.png",
+      imageUrl: "/images/Sunset.jpeg",
     },
     {
       id: 3,
@@ -277,7 +286,7 @@ const PLACES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-52 right-20",
-      imageUrl: "/images/gal3.png",
+      imageUrl: "/images/Buildings.jpeg",
     },
     {
       id: 4,
@@ -286,38 +295,12 @@ const PLACES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-60 left-40",
-      imageUrl: "/images/gal4.png",
+      imageUrl: "/images/Bird.jpeg",
     },
   ],
 };
 
-const PEOPLE_LOCATION = {
-  id: 4,
-  type: "people",
-  name: "People",
-  icon: "/icons/gicon4.svg",
-  kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "Family",
-      icon: "/images/mankriti2.jpeg",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-10",
-      imageUrl: "/images/man1.jpeg",
-    },
-    {
-      id: 2,
-      name: "Friends",
-      icon: "/images/mankriti1.jpeg",
-      kind: "file",
-      fileType: "img",
-      position: "top-40 left-80",
-      imageUrl: "/images/man2.jpeg",
-    },
-  ],
-};
+
 
 const FAVORITES_LOCATION = {
   id: 5,
@@ -333,7 +316,7 @@ const FAVORITES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-5 left-5",
-      imageUrl: "/images/gal1.png",
+      imageUrl: "/images/CP.jpeg",
     },
     {
       id: 2,
@@ -342,7 +325,16 @@ const FAVORITES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-20",
-      imageUrl: "/images/gal2.png",
+      imageUrl: "/images/diwali.jpeg",
+    },
+    {
+      id: 4,
+      name: "Best Shot 2",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-28 right-20",
+      imageUrl: "/images/man3.jpeg",
     },
     {
       id: 3,
@@ -351,7 +343,7 @@ const FAVORITES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-52 left-60",
-      imageUrl: "/images/gal3.png",
+      imageUrl: "/images/mac.jpeg",
     },
   ],
 };
@@ -360,7 +352,7 @@ const photosLinks = {
   library: LIBRARY_LOCATION,
   memories: MEMORIES_LOCATION,
   places: PLACES_LOCATION,
-  people: PEOPLE_LOCATION,
+  
   favorites: FAVORITES_LOCATION,
 };
 
@@ -449,8 +441,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "bottom-10 right-[60%]",
-          imageUrl:
-"/images/fingenie.png",
+          imageUrl: "/images/fingenie.png",
         },
       ],
     },
@@ -503,8 +494,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "bottom-10 right-[60%]",
-          imageUrl:
-            "/images/medicall.png",
+          imageUrl: "/images/medicall.png",
         },
       ],
     },
@@ -557,8 +547,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "bottom-10 right-[60%]",
-          imageUrl:
-            "/images/sensai.png",
+          imageUrl: "/images/sensai.png",
         },
       ],
     },
@@ -611,8 +600,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "bottom-10 right-[60%]",
-          imageUrl:
-            "/images/reflect.png",
+          imageUrl: "/images/reflect.png",
         },
       ],
     },
@@ -665,8 +653,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "bottom-10 right-[60%]",
-          imageUrl:
-            "/images/moijito.png",
+          imageUrl: "/images/moijito.png",
         },
       ],
     },

@@ -64,10 +64,9 @@ console.log(activeGalleryLocation);
                 <div className="gallery flex-1 overflow-auto">
                     <ul>
                         {activeGalleryLocation?.children?.map((item) => {
-                            console.log(item);
                             
                             return (
-                                <li key={item.id} onClick={() => openItem(item)}>
+                                <li key={item.id} className={clsx(item.id === activeGalleryLocation?.id ? "active" : "not-active")} onClick={() => openItem(item)}>
                                     <Image height={400} width={400} src={item.imageUrl} alt={item.name} />
                                 </li>
                             )
