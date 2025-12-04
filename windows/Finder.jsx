@@ -47,6 +47,8 @@ const Finder = () => {
         if (item.kind === "folder") {
            return setActiveLocation(item)
         }
+        console.log(`${item.fileType}${item.kind}`);
+        
         return openWindow(`${item.fileType}${item.kind}`,item)
 
 

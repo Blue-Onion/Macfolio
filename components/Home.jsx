@@ -20,7 +20,7 @@ const Home = () => {
         openWindow("finder");
     }
     return (
-        <sectio id="home">
+        <section id="home">
             <ul>
                 {project.map((project) => (
                     <li className={clsx("group folder", project.windowPosition)} onClick={()=>openProject(project)} key={project.id}>
@@ -29,7 +29,7 @@ const Home = () => {
                     </li>
                 ))}
             </ul>
-        </sectio>
+        </section>
     )
 }
 
