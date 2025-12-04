@@ -325,7 +325,7 @@ const FAVORITES_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-20",
-      imageUrl: "/images/diwali.jpeg",
+      imageUrl: "/images/Diwali.jpeg",
     },
     {
       id: 4,
