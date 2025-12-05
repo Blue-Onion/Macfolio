@@ -1,3 +1,4 @@
+'use client'
 
 import React from 'react'
 
@@ -8,6 +9,7 @@ import Terminal from '@/windows/Terminal'
 import Navbar from '@/components/Navbar'
 import Welcome from '@/components/Welcome'
 import Dock from '@/components/Dock'
+import LoadingWrapper from '@/components/LoadingWrapper'
 
 import Arc from '@/windows/Arc'
 import Resume from '@/windows/Resume'
@@ -20,23 +22,25 @@ import Gallery from '@/windows/Gallery'
 
 gsap.registerPlugin(Draggable)
 
-const page = () => {
+const Page = () => {
   return (
-    <main>
-      <Navbar/>
-      <Welcome/>
-      <Dock/>
-      <Terminal/>
-      <Arc/>
-      <Home/>
-      <Resume/>
-      <Finder/>
-      <Contact/>
-      <TextFile/>
-      <ImgFile/>
-      <Gallery/>
-    </main>
+    <LoadingWrapper>
+      <main>
+        <Navbar />
+        <Welcome />
+        <Dock />
+        <Terminal />
+        <Arc />
+        <Home />
+        <Resume />
+        <Finder />
+        <Contact />
+        <TextFile />
+        <ImgFile />
+        <Gallery />
+      </main>
+    </LoadingWrapper>
   )
 }
 
-export default page
+export default Page
