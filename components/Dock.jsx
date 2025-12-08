@@ -4,15 +4,34 @@ import useWindowStore from '@/store/window';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Image from 'next/image';
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Tooltip } from 'react-tooltip';
 
 const Dock = () => {
     const { openWindow, focusWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
+    const [isMdOrLarger, setIsMdOrLarger] = useState(false);
+
+    // Check if screen size is md or larger (768px)
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMdOrLarger(window.innerWidth >= 768);
+        };
+
+        // Check on mount
+        checkScreenSize();
+
+        // Add resize listener
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
+
     useGSAP(() => {
         const dock = dockRef.current;
-        if (!dock) return () => { };
+        if (!dock || !isMdOrLarger) return () => { };
         const icons = dock.querySelectorAll('.dock-icon');
         const animateIcons = (mouseX) => {
             const { left } = dock.getBoundingClientRect();
@@ -71,7 +90,7 @@ const Dock = () => {
             dock.removeEventListener("mouseenter", () => { });
             dock.removeEventListener("mouseleave", () => { });
         };
-    }, [])
+    }, [isMdOrLarger])
     const toggleApp = (app) => {
         if (!app.canOpen) return;
         const window = windows[app.id]
