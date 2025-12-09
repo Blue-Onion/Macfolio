@@ -63,12 +63,7 @@ const dockApps = [
     icon: "terminal.jpg",
     canOpen: true,
   },
-  {
-    id: "Archive",
-    name: "Archive", // was "Trash"
-    icon: "trash.jpg",
-    canOpen: false,
-  },
+
 ];
 
 const achievements = [

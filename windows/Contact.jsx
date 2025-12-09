@@ -10,7 +10,7 @@ import { socials } from "@/data";
 
 const Contact = () => {
     return (
-        <>
+        <section className="h-full w-full">
 
             <div className="flex items-center px-4 py-2">
                 <WindowControls target="contact" />
@@ -71,7 +71,7 @@ const Contact = () => {
                 </div>
 
             </div>
-        </>
+        </section>
     );
 };
 

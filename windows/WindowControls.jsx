@@ -38,7 +38,7 @@ const WindowControls = ({ target }) => {
       </div>
     </div>
     <div className="md:hidden">
-      <span  onClick={() => closeWindow(target)} className="font-bold">
+      <span  onClick={() => closeWindow(target)} className="font-bold underline text-black">
         Go Back
       </span>
     </div>

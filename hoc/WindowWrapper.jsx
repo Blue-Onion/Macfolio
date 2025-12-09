@@ -15,15 +15,20 @@ const WindowWrapper = (Component, windowKey) => {
     useGSAP(() => {
       const el = ref.current;
       if (!el) return;
-      const [instance]=Draggable.create(el, {
-        bounds:"main",
-        type:"x,y",
-        onPress: () => {  
+
+      // Disable dragging on small screens
+      const isMobile = window.innerWidth < 640; // sm breakpoint
+      if (isMobile) return;
+
+      const [instance] = Draggable.create(el, {
+        bounds: "main",
+        type: "x,y",
+        onPress: () => {
           focusWindow(windowKey)
         }
       })
 
-return ()=>instance.kill()
+      return () => instance.kill()
     }, [])
     useGSAP(() => {
       const el = ref.current;
@@ -41,10 +46,11 @@ return ()=>instance.kill()
       <section
         id={windowKey}
         ref={ref}
+        onClick={() => focusWindow(windowKey)}
         style={{
           zIndex
         }}
-        className='absolute shadow-2xl drop-shadow-2xl rounded-3xl'
+        className='absolute max-sm:fixed! max-sm:inset-0! max-sm:w-screen! max-sm:h-screen! max-sm:top-0! max-sm:left-0! max-sm:transform-none! shadow-2xl drop-shadow-2xl rounded-3xl max-sm:rounded-none!'
       >
         <Component {...props} />
       </section>
