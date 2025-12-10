@@ -50,7 +50,7 @@ const WindowWrapper = (Component, windowKey) => {
         style={{
           zIndex
         }}
-        className='absolute max-sm:fixed! max-sm:inset-0! max-sm:w-screen! max-sm:h-screen! max-sm:top-0! max-sm:left-0! max-sm:transform-none! shadow-2xl drop-shadow-2xl rounded-3xl max-sm:rounded-none!'
+        className='absolute max-sm:fixed! max-sm:top-12! max-sm:bottom-0! max-sm:left-0! max-sm:right-0! max-sm:w-screen! max-sm:h-auto! max-sm:transform-none! shadow-2xl drop-shadow-2xl rounded-3xl max-sm:rounded-none!'
       >
         <Component {...props} />
       </section>
