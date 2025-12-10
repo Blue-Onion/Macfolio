@@ -24,7 +24,7 @@ const Terminal = () => {
           </span>
           ls tech Stack
         </p>
-        <div className="label">
+        <div className="label  hidden md:flex">
           <p className="w-32">
             Category
           </p>
@@ -32,7 +32,7 @@ const Terminal = () => {
         </div>
         <ul className='content'>
           {techStack.map((tech) => (
-            <li key={tech.category} className='flex '>
+            <li key={tech.category} className='flex-col flex md:flex-row  '>
               <Check className='text-emerald-600' />
               <h3>
                 {tech.category}
