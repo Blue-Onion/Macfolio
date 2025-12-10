@@ -40,15 +40,9 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "arc",
-    name: "Articles", // was "arc"
-    icon: "arc.png",
-    canOpen: true,
-  },
-  {
-    id: "photos",
-    name: "Gallery", // was "Photos"
-    icon: "photos.jpg",
+    id: "terminal",
+    name: "Skills", // was "Terminal"
+    icon: "terminal.jpg",
     canOpen: true,
   },
   {
@@ -58,9 +52,15 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "terminal",
-    name: "Skills", // was "Terminal"
-    icon: "terminal.jpg",
+    id: "arc",
+    name: "Articles", // was "arc"
+    icon: "arc.png",
+    canOpen: true,
+  },
+  {
+    id: "photos",
+    name: "Gallery", // was "Photos"
+    icon: "photos.jpg",
     canOpen: true,
   },
 
@@ -73,7 +73,7 @@ const achievements = [
     date: "2025",
     description:
       "Built an AI-powered web solution under 24 hours during Supernova.",
-    image: "/images/leetcode.png", // placeholder
+    image: "/images/supernova2.jpeg", // placeholder
     link: "https://certificate-link.com/supernova",
   },
   {
@@ -82,7 +82,7 @@ const achievements = [
     date: "2024",
     description:
       "Participated in one of the largest student-run hackathons at Delhi University.",
-    image: "/images/leetcode.png", // placeholder
+    image: "/images/con.jpeg", // placeholder
     link: "https://certificate-link.com/hackcbs",
   },
   {
@@ -135,11 +135,11 @@ const socials = [
     link: "https://github.com/Blue-Onion",
   },
   {
-    id: 2,
-    text: "Instagram",
-    icon: "/icons/insta.svg",
-    bg: "#4bcb63",
-    link: "https://www.instagram.com/adityasinghrawat54/",
+    id: 4,
+    text: "LinkedIn",
+    icon: "/icons/linkedin.svg",
+    bg: "#05b6f6",
+    link: "https://www.linkedin.com/in/aditya-singh-rawat-0a7416326",
   },
   {
     id: 3,
@@ -149,11 +149,11 @@ const socials = [
     link: "https://x.com/Blue_Onion_3480",
   },
   {
-    id: 4,
-    text: "LinkedIn",
-    icon: "/icons/linkedin.svg",
-    bg: "#05b6f6",
-    link: "https://www.linkedin.com/in/aditya-singh-rawat-0a7416326",
+    id: 2,
+    text: "Instagram",
+    icon: "/icons/insta.svg",
+    bg: "#4bcb63",
+    link: "https://www.instagram.com/adityasinghrawat54/",
   },
 ];
 

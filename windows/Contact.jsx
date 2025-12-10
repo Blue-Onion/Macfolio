@@ -51,7 +51,7 @@ const Contact = () => {
                         {socials.map((social) => (
                             <li
                                 key={social.id}
-                                className="h-32 w-32 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                                className="h-32 md:w-32 w-full rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                                 style={{ backgroundColor: social.bg }}
                             >
                                 <Link
