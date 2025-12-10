@@ -34,7 +34,7 @@ body {
 
 @layer base {
   main {
-    @apply w-dvw h-screen overflow-hidden;
+    @apply w-dvw h-screen;
   }
 
   nav {

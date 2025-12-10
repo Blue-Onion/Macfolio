@@ -104,7 +104,7 @@ const Dock = () => {
 
     }
     return (
-        <section id='dock'>
+        <section id='dock' className=''>
             <div className="dock-container" ref={dockRef}>
                 <div className="effect"></div>
                 <div className="tint"></div>
@@ -116,7 +116,7 @@ const Dock = () => {
                         <div key={app.id} className="">
                             <button
                                 type='button'
-                                className='dock-icon flex-col'
+                                className='dock-icon h-16 md:h-16 md:w-16 w-16 flex-col'
                                 aria-label={app.name}
                                 data-tooltip-id="dock-tooltip"
                                 data-tooltip-delay-show={150}
@@ -129,8 +129,8 @@ const Dock = () => {
                                 <Image
                                     src={`/images/${app.icon}`}
                                     alt={app.name}
-                                    width={150}
-                                    height={50}
+                                    width={100}
+                                    height={150}
                                 />
                                 {app.isOpen && <span className="">.</span>}
                             </button>
