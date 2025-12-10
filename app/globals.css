@@ -41,7 +41,7 @@ body {
     @apply flex justify-between  w-full items-center bg-white/10 backdrop-blur-xs p-2 px-5;
 
     div {
-      @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
+      @apply flex items-center max-sm:w-full  gap-5;
 
       &:last-child {
         @apply max-sm:hidden;
@@ -49,7 +49,7 @@ body {
     }
 
     ul {
-      @apply flex items-center gap-5 max-sm:hidden;
+      @apply flex w-full justify-end items-center gap-5 ;
 
       p {
         @apply text-sm cursor-pointer hover:underline transition-all;
@@ -80,7 +80,7 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-2 left-1/2 -translate-x-1/2 z-500 select-none;
+    @apply absolute bottom-2 left-1/2 -translate-x-1/2 z-10 md:z-500 select-none;
 
     .dock-container {
       display: flex;
