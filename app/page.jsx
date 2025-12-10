@@ -25,8 +25,8 @@ gsap.registerPlugin(Draggable)
 const Page = () => {
   return (
     <LoadingWrapper>
-      <main>
         <Navbar />
+      <main>
         <Welcome />
         <Dock />
         <Terminal />

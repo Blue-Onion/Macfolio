@@ -9,13 +9,14 @@ const WindowControls = ({ target }) => {
   const [hover, setHover] = useState(null);
 
   return (
-    <div id="window-controls" className="flex items-center gap-[6px]">
+    <>
+    <div id="window-controls" className="items-center gap-[6px] hidden md:flex">
       <div
         className="close flex items-center justify-center"
         onMouseEnter={() => setHover("close")}
         onMouseLeave={() => setHover(null)}
         onClick={() => closeWindow(target)}
-      >
+        >
         {hover === "close" && <Image src="/images/close.png" alt="x" width={10} height={10} className="font-bold  pointer-events-none" />}
       </div>
 
@@ -24,7 +25,7 @@ const WindowControls = ({ target }) => {
         onMouseEnter={() => setHover("minimize")}
         onMouseLeave={() => setHover(null)}
         onClick={() => closeWindow(target)}
-      >
+        >
         {hover === "minimize" && <Minus size={10} className="font-bold  pointer-events-none" />}
       </div>
 
@@ -32,10 +33,16 @@ const WindowControls = ({ target }) => {
         className="maximize flex items-center justify-center"
         onMouseEnter={() => setHover("maximize")}
         onMouseLeave={() => setHover(null)}
-      >
+        >
         {hover === "maximize" && <Maximize2 size={10} className="font-bold  pointer-events-none" />}
       </div>
     </div>
+    <div className="md:hidden">
+      <span  onClick={() => closeWindow(target)} className="font-bold underline text-black">
+        Go Back
+      </span>
+    </div>
+        </>
   )
 }
 

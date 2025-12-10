@@ -11,7 +11,7 @@ import clsx from 'clsx'
 const Gallery = () => {
     const { activeGalleryLocation, setActiveGalleryLocation } = useGalleryStore();
     const { openWindow } = useWindowStore();
-console.log(activeGalleryLocation);
+
 
     const renderCategories = (name, list) => {
         return <div className="space-y-4 p-1">
