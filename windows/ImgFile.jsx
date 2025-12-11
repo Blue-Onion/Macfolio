@@ -10,7 +10,6 @@ const ImgFile = () => {
   const data = windows?.imgfile?.data;
   if (!data) return;
   const { imageUrl, description } = data;
-console.log("IM CO");
 
   return (
     <>

@@ -112,30 +112,36 @@ const Dock = () => {
                 <div className="text"></div>
                 <div className="flex gap-2">
 
-                    {dockApps.map((app) => (
-                        <div key={app.id} className="">
-                            <button
-                                type='button'
-                                className='dock-icon h-16 md:h-16 md:w-16 w-16 flex-col'
-                                aria-label={app.name}
-                                data-tooltip-id="dock-tooltip"
-                                data-tooltip-delay-show={150}
-                                disabled={!app.canOpen}
-                                data-tooltip-content={app.name}
+                    {dockApps.map((app, index) => {
+                        // Hide last element on mobile (phones)
+                        const isLastItem = index === dockApps.length - 1;
+                        if (isLastItem && !isMdOrLarger) return null;
 
-                                onClick={() => toggleApp(app)}
+                        return (
+                            <div key={app.id} className="">
+                                <button
+                                    type='button'
+                                    className='dock-icon h-16 md:h-16 md:w-16 w-16 flex-col'
+                                    aria-label={app.name}
+                                    data-tooltip-id="dock-tooltip"
+                                    data-tooltip-delay-show={150}
+                                    disabled={!app.canOpen}
+                                    data-tooltip-content={app.name}
 
-                            >
-                                <Image
-                                    src={`/images/${app.icon}`}
-                                    alt={app.name}
-                                    width={100}
-                                    height={150}
-                                />
-                                {app.isOpen && <span className="">.</span>}
-                            </button>
-                        </div>
-                    )
+                                    onClick={() => toggleApp(app)}
+
+                                >
+                                    <Image
+                                        src={`/images/${app.icon}`}
+                                        alt={app.name}
+                                        width={100}
+                                        height={150}
+                                    />
+                                    {app.isOpen && <span className="">.</span>}
+                                </button>
+                            </div>
+                        )
+                    }
                     )}
                 </div>
                 <Tooltip id='dock-tooltip' className='tooltip' place='top' />

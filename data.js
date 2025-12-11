@@ -391,8 +391,8 @@ const WORK_LOCATION = {
       name: "FinGenie",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-6 left-8",
-      windowPosition: "top-[8vh] left-[20vw]",
+      position: "top-[12vh] left-[6vw]",
+      windowPosition: "top-[2vh] left-[8vw]",
       children: [
         {
           id: 201,
@@ -444,8 +444,8 @@ const WORK_LOCATION = {
       name: "MediCall",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[35vh] left-[15vw]",
-      windowPosition: "top-[25vh] left-[45vw]",
+      position: "top-[38vh] left-[11vw]",
+      windowPosition: "top-[15vh] left-[25vw]",
       children: [
         {
           id: 210,
@@ -497,8 +497,8 @@ const WORK_LOCATION = {
       name: "SensAI",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[10vh] left-[70vw]",
-      windowPosition: "top-[15vh] left-[5vw]",
+      position: "top-[18vh] left-[26vw]",
+      windowPosition: "top-[30vh] left-[9vw]",
       children: [
         {
           id: 220,
@@ -550,8 +550,8 @@ const WORK_LOCATION = {
       name: "Reflect",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[45vh] left-[48vw]",
-      windowPosition: "top-[40vh] left-[30vw]",
+      position: "top-[22vh] left-[16vw]",
+      windowPosition: "top-[30vh] left-[22vw]",
       children: [
         {
           id: 230,
@@ -603,8 +603,8 @@ const WORK_LOCATION = {
       name: "PourTail",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[70vh] left-[5vw]",
-      windowPosition: "top-[10vh] left-[60vw]",
+      position: "top-[1vh] left-[8vw]",
+      windowPosition: "top-[45vh] left-[18vw]",
       children: [
         {
           id: 240,

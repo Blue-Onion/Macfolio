@@ -33,7 +33,7 @@ const Arc = () => {
                 <div className="space-y-8">
                     {achievements.map((ach) => {
                         return <div key={ach.id} className="blog-post">
-                            <div className="col-span-2">
+                            <div className="col-span-2 flex ">
 
                                 <img
                                     src={ach.image}
