@@ -1,6 +1,6 @@
 "use client"
 import useWindowStore from '@/store/window'
-import { Minus, Maximize2, X } from 'lucide-react'
+import { Minus, Maximize2, X, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -37,9 +37,9 @@ const WindowControls = ({ target }) => {
         {hover === "maximize" && <Maximize2 size={10} className="font-bold  pointer-events-none" />}
       </div>
     </div>
-    <div className="md:hidden">
-      <span  onClick={() => closeWindow(target)} className="font-bold underline text-black">
-        Go Back
+    <div className="md:hidden  w-xs">
+      <span  onClick={() => closeWindow(target)} className="font-bold    text-black">
+<XIcon className='font-bold' size={25}/>
       </span>
     </div>
         </>

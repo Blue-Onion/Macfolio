@@ -3,10 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import gsap from 'gsap'
 
-/**
- * LoadingWrapper component that prevents FOUC (Flash of Unstyled Content)
- * Hides children until they're ready to be displayed, then fades them in smoothly
- */
+
 export default function LoadingWrapper({ children }) {
     const [isReady, setIsReady] = useState(false)
     const contentRef = React.useRef(null)
