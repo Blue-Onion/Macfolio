@@ -333,10 +333,10 @@ body {
     }
 
     .content {
-      @apply flex-1 p-8  max-w-2xl relative;
+      @apply md:flex-1 md:p-8 max-w-2xl grid-cols-3 gap-3 grid md:relative;
 
       li {
-        @apply absolute flex items-center flex-col gap-3;
+        @apply md:absolute  flex items-center flex-col gap-3;
 
         img {
           @apply object-contain object-center size-16 relative group-hover:scale-105;

@@ -63,7 +63,6 @@ const dockApps = [
     icon: "photos.jpg",
     canOpen: true,
   },
-
 ];
 
 const achievements = [
@@ -295,8 +294,6 @@ const PLACES_LOCATION = {
   ],
 };
 
-
-
 const FAVORITES_LOCATION = {
   id: 5,
   type: "favorites",
@@ -347,7 +344,7 @@ const photosLinks = {
   library: LIBRARY_LOCATION,
   memories: MEMORIES_LOCATION,
   places: PLACES_LOCATION,
-  
+
   favorites: FAVORITES_LOCATION,
 };
 
