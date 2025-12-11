@@ -6,17 +6,18 @@ import useLocationStore from '@/store/location'
 import Image from 'next/image'
 import clsx from 'clsx'
 import useWindowStore from '@/store/window'
-import { Backpack } from 'lucide-react'
+import { MoveLeftIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 const Finder = () => {
     const { setActiveLocation, activeLocation } = useLocationStore()
     const [breadCrumb, setBreadCrumb] = useState(() => [activeLocation])
     const { openWindow } = useWindowStore()
-
-const isPhone=typeof window !== "undefined" && window.innerWidth < 768
+    const [isPhone, setIsPhone] = useState(false)
 
     useEffect(() => {
+        // Check if mobile after mount to prevent hydration errors
         if (typeof window !== "undefined" && window.innerWidth < 768) {
+            setIsPhone(true)
             const ROOT_LOCATION = {
                 id: 0,
                 type: "root",
@@ -36,7 +37,10 @@ const isPhone=typeof window !== "undefined" && window.innerWidth < 768
             setActiveLocation(lastItem)
         }
     }, [breadCrumb, setActiveLocation, activeLocation])
-
+    const getItemIcon = (item) => {
+        if (!isPhone) return item.icon
+        return item.kind === "folder" ? "/images/folder.jpg" : item.icon
+    }
     const openItem = (item) => {
         if (!item) return
         if (item.id === breadCrumb[breadCrumb.length - 2]?.id) {
@@ -98,29 +102,30 @@ const isPhone=typeof window !== "undefined" && window.innerWidth < 768
                     {renderList("Work", locations.work.children)}
 
                 </div>
-                <div className="topBar md:hidden flex">
+                <div className="topBar mb-6 md:hidden flex">
                     <WindowControls target="finder" />
                     <div className="tile pr-8 flex w-full justify-start  items-center">
                         <h3 className='text-lg  truncate font-bold'>{activeLocation.name}</h3>
                     </div>
 
                 </div>
-                <div className="controls">
-                    <button className={`flex  items-center gap-2`}
+                <div className="controls p-2 md:hidden">
+                    <button className={`flex ${breadCrumb.length === 1 ? "opacity-50 cursor-not-allowed" : ""}  items-center gap-2`}
                         disabled={breadCrumb.length === 1}
                         onClick={() => openItem(breadCrumb[breadCrumb.length - 2])}>
-                        <Backpack />
+                        <MoveLeftIcon />
                     </button>
                 </div>
                 <ul className="content ">
                     {activeLocation?.children.map((item) => {
 
 
+
                         return <li key={item.id} onClick={(e) => {
                             e.stopPropagation();
                             openItem(item);
-                        }} className={item.position?item.position:""}>
-                            <img src={isPhone?"/images/folder.jpg":item.icon} alt={item.name} />
+                        }} className={item.position || ""}>
+                            <img src={getItemIcon(item)} alt={item.name} />
                             <p className='text-sm truncate'>{item.name}</p>
                         </li>
                     })}
