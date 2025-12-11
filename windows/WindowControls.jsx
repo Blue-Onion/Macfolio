@@ -37,8 +37,8 @@ const WindowControls = ({ target }) => {
         {hover === "maximize" && <Maximize2 size={10} className="font-bold  pointer-events-none" />}
       </div>
     </div>
-    <div className="md:hidden">
-      <span  onClick={() => closeWindow(target)} className="font-bold underline text-black">
+    <div className="md:hidden w-xs">
+      <span  onClick={() => closeWindow(target)} className="font-bold underline w-fit   text-black">
         Go Back
       </span>
     </div>
