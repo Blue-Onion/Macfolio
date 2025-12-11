@@ -358,7 +358,7 @@ body {
   }
 
   #imgfile {
-    @apply w-xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-xl flex justify-center  items-center md:absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       p {
@@ -370,7 +370,7 @@ body {
       @apply p-2 bg-gray-200 max-h-[70vh];
 
       img {
-        @apply w-full h-fit object-contain object-center;
+        @apply w-full h-fit object-contain  object-center;
       }
     }
   }
