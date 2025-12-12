@@ -75,7 +75,7 @@ const Dock = () => {
                 ease: "back"
             });
         });
-        gsap.from(dock, { duration: 0.5, scale: 1, delay: 0.5, ease: "back" })
+
         dock.addEventListener("mouseleave", () => {
             gsap.to(dock, {
                 scaleX: 1,

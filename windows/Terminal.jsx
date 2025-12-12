@@ -22,7 +22,7 @@ const Terminal = () => {
           <span className="font-bold mr-1">
             @Aditya ~ %
           </span>
-          ls tech Stack
+          ls techStack
         </p>
         <div className="label  hidden md:flex">
           <p className="w-32">

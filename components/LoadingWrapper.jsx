@@ -1,105 +1,123 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/all'
-
+import Image from 'next/image'
 
 export default function LoadingWrapper({ children }) {
     const [isReady, setIsReady] = useState(false)
-    const contentRef = React.useRef(null)
+    const contentRef = useRef(null)
+    const maskRef = useRef(null)
 
     useEffect(() => {
         setIsReady(true)
     }, [])
 
     useEffect(() => {
-        if (isReady && contentRef.current) {
-            const tl = gsap.timeline({
-                defaults: { ease: "power2.out" }
-            })
+        if (!isReady || !contentRef.current || !maskRef.current) return
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } })
+        tl.fromTo(maskRef.current,
+            { opacity: 1 },
+            { opacity: 1, duration: 0 }
+        )
 
-            // Loader + Content together
-            tl.to(".loader", {
-                opacity: 0,
-                duration: 0.3,
-                pointerEvents: 'none',
-                onComplete: () => gsap.set(".loader", { display: 'none' })
-            })
-            .to(contentRef.current, {
+        tl.to(maskRef.current, {
+            '--mask-size': '170%',
+            duration: 1.3,
+            ease: "expo.out"
+        })
+
+        tl.to(maskRef.current, {
+            opacity: 0,
+            duration: 0,
+            onComplete: () => gsap.set(maskRef.current, { display: 'none' })
+        })
+
+        tl.to(contentRef.current, {
+            opacity: 1,
+            duration: 0
+        })
+        tl.add("startTogether")
+
+        tl.from("header", {
+            opacity: 0,
+            y: -20,
+            duration: 0.4
+        }, "startTogether")
+
+        tl.from(".folder", {
+            opacity: 0,
+            scale: 2,
+            duration: 0.5,
+            stagger: 0.04,
+            ease: "power3.out"
+        }, "startTogether")
+
+        const titleText = new SplitText(".welcomeTextMain", { type: "words,chars" })
+        const subtitleText = new SplitText(".welcomeTextSub", { type: "words,chars" })
+
+        tl.from(subtitleText.words, {
+            opacity: 0,
+            x: 20,
+            stagger: 0.01,
+            duration: 0.4
+        }, "startTogether")
+
+        tl.fromTo(
+            ".dock-container",
+            { opacity: 0, scale: 0.8 },
+            {
                 opacity: 1,
-                duration: 0.3
-            }, "<") // same time
-
-            // -----------------------------------------
-            // EVERYTHING BELOW HAPPENS TOGETHER
-            // -----------------------------------------
-            tl.add("startTogether") // label
-
-            tl.from("header", {
-                opacity: 0,
-                y: -20,
-                duration: 0.3
-            }, "startTogether")
-
-            tl.from(".folder", {
-                opacity: 0,
-                scale: 2,
-                duration: 0.3,
-                stagger: 0.05,
-                ease: "power3.out"
-            }, "startTogether")
-
-            tl.from(".dock", {
-                opacity: 0,
-                y: 30,
-                scale: 0.8,
-                duration: 0.3,
-                stagger: 0.03,
+                scale: 1,
+                duration: 0.5,
                 ease: "back.out(1.7)"
-            }, "startTogether")
+            },
+            "startTogether"
+        )
 
-            // SplitText animations
-            const titleText = new SplitText(".welcomeTextMain", { type: "words,chars" })
-            const subtitleText = new SplitText(".welcomeTextSub", { type: "words,chars" })
-
-            tl.from(subtitleText.words, {
-                opacity: 0,
-                x: 20,
-                stagger: 0.02,
-                duration: 0.3
-            }, "startTogether")
-tl.fromTo(
-    ".dock-container",
-    {
-        opacity: 0,
-        scale: 0.8
-    },
-    {
-        opacity: 1,
-
-        scale: 1,
-        duration: 0.3,
-        stagger: 0.03,
-        ease: "back.out(1.7)"
-    },
-    "startTogether" // THIS goes here cleanly
-)
-            tl.from(titleText.chars, {
-                scale: 0.5,
-                opacity: 0,
-                stagger: 0.05,
-                duration: 0.4,
-                ease: "easeInOut"
-            }, "startTogether")
-        }
+        tl.from(titleText.chars, {
+            scale: 0.5,
+            opacity: 0,
+            stagger: 0.03,
+            duration: 0.5,
+            ease: "power2.out"
+        }, "startTogether")
     }, [isReady])
 
     return (
         <>
-            <div className="loader relative min-h-screen bg-black">
-                <div className="pre-loader">hh</div>
+
+            <div
+                ref={maskRef}
+                className="fixed inset-0 flex items-center justify-center bg-black z-9999"
+                style={{
+                    '--mask-size': '20%',
+                }}
+            >
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: "url('/images/wallpaper.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+
+                        maskImage: "url('/images/macos.jpg')",
+                        WebkitMaskImage: "url('/images/macos.jpg')",
+
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+
+                        maskSize: "var(--mask-size)",
+                        WebkitMaskSize: "var(--mask-size)",
+                    }}
+                />
             </div>
+
+            {/* CONTENT BELOW */}
             <div ref={contentRef} style={{ opacity: 0 }}>
                 {children}
             </div>
