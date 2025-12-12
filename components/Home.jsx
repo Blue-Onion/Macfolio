@@ -4,6 +4,7 @@ import useLocationStore from '@/store/location'
 import useWindowStore from '@/store/window'
 import { useGSAP } from '@gsap/react'
 import clsx from 'clsx'
+import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 import Image from 'next/image'
 import React from 'react'
@@ -16,6 +17,13 @@ const Home = () => {
         Draggable.create(".folder", {
             bounds: "main",
             type: "x,y"
+        })
+        gsap.from(".folder", {
+            duration: 0.5,
+            opacity: 0,
+            scale: 2,
+            stagger: 0.05,
+            ease: "power3.out"
         })
     }, [])
     const openProject = (project) => {
