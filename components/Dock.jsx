@@ -70,15 +70,15 @@ const Dock = () => {
         // Scale dock
         dock.addEventListener("mouseenter", () => {
             gsap.to(dock, {
-                scaleX: 1.12,
+                scaleX: 1.05,
                 duration: 0.05,
                 ease: "back"
             });
         });
-gsap.from(dock,{duration:0.5,scale:1.1,delay:0.5,ease:"back"})
+
         dock.addEventListener("mouseleave", () => {
             gsap.to(dock, {
-                scaleX: 1.1,
+                scaleX: 1,
                 duration: 0.05,
                 ease: "back"
             });

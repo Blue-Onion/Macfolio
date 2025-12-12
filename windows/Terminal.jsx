@@ -4,12 +4,12 @@ import WindowWrapper from '@/hoc/WindowWrapper'
 import { Check } from 'lucide-react'
 import React from 'react'
 import WindowControls from './WindowControls'
-import Image from 'next/image'
+
 
 const Terminal = () => {
   return (
     <>
-      <div id='' className='text-gray-600 border-b gap-5 border-gray-200 p-2 flex'>
+     <div className='text-gray-600 border-b gap-5 border-gray-200 p-2 flex'>
         <WindowControls target='terminal' />
 
         <h3 className='font-extrabold'>
@@ -22,7 +22,7 @@ const Terminal = () => {
           <span className="font-bold mr-1">
             @Aditya ~ %
           </span>
-          ls tech Stack
+          ls techStack
         </p>
         <div className="label  hidden md:flex">
           <p className="w-32">

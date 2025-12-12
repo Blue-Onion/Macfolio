@@ -3,7 +3,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+
 import { useRef } from "react"
 
 const FONT_WEIGHT = {
@@ -11,7 +11,7 @@ const FONT_WEIGHT = {
     title: { min: 500, max: 900, default: 500 }
 }
 const setUpHover = (cont, type) => {
-    if (!cont) return()=>{};
+    if (!cont) return () => { };
 
     const letters = cont.querySelectorAll("span");
     const { min, max, default: base } = FONT_WEIGHT[type];
@@ -65,17 +65,10 @@ const Welcome = () => {
 
     useGSAP(() => {
         const titleHoverEffcet = setUpHover(titleRef.current, "title")
-        const titleText=new SplitText(titleRef.current,{type:"words,chars"})
-        const subtitleText=new SplitText(subtitleRef.current,{type:"words,chars"})
+      
         const subtitleHoverEffect = setUpHover(subtitleRef.current, "subtitle")
- gsap.from(titleText.chars, {
-            duration: 1,
-            scale: 1.5,
-            opacity: 0,
-            ease: "power3.out",
-            stagger: 0.05   
-        })
-        gsap.fromTo(subtitleText.words,{opacity:0,x:20},{opacity:1,x:0,stagger:0.02,duration:0.5})
+      
+       
         return () => {
             titleHoverEffcet()
             subtitleHoverEffect()
@@ -85,10 +78,10 @@ const Welcome = () => {
 
     return (
         <section id="welcome" >
-            <p ref={subtitleRef} className="">
+            <p ref={subtitleRef} className="welcomeTextSub">
                 {renderText("Hey I'm Aditya! Welcome to my ", "text-2xl md:text-3xl", 100)}
             </p>
-            <h1 ref={titleRef} className="mt-7">
+            <h1 ref={titleRef} className="mt-7 welcomeTextMain">
                 {renderText("Macƒolio.", "italic text-6xl md:text-8xl", 500)}
             </h1>
         </section>

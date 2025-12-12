@@ -17,17 +17,19 @@ const Finder = () => {
     useEffect(() => {
         // Check if mobile after mount to prevent hydration errors
         if (typeof window !== "undefined" && window.innerWidth < 768) {
-            setIsPhone(true)
-            const ROOT_LOCATION = {
-                id: 0,
-                type: "root",
-                name: "Portfolio",
-                icon: "/icons/finder.jpg",
-                kind: "folder",
-                children: Object.values(locations)
-            }
-            setActiveLocation(ROOT_LOCATION)
-            setBreadCrumb([ROOT_LOCATION])
+            setTimeout(() => {
+                setIsPhone(true)
+                const ROOT_LOCATION = {
+                    id: 0,
+                    type: "root",
+                    name: "Portfolio",
+                    icon: "/icons/finder.jpg",
+                    kind: "folder",
+                    children: Object.values(locations)
+                }
+                setActiveLocation(ROOT_LOCATION)
+                setBreadCrumb([ROOT_LOCATION])
+            }, 0)
         }
     }, [setActiveLocation])
 
@@ -125,7 +127,7 @@ const Finder = () => {
                             e.stopPropagation();
                             openItem(item);
                         }} className={item.position || ""}>
-                            <img src={getItemIcon(item)} alt={item.name} />
+                            <Image src={getItemIcon(item)} alt={item.name} width={40} height={40} />
                             <p className='text-sm truncate'>{item.name}</p>
                         </li>
                     })}

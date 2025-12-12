@@ -1,5 +1,5 @@
 "use client"
-import { navIcons, navLinks } from '@/data'
+import { navLinks } from '@/data'
 import useWindowStore from '@/store/window'
 import dayjs from 'dayjs'
 import Image from 'next/image'
