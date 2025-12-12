@@ -1,11 +1,12 @@
 "use client"
 import { achievements, techStack } from '@/data'
 import WindowWrapper from '@/hoc/WindowWrapper'
-import { Check, ChevronLeft, ChevronRight, Copy, PanelLeft, Plus, Share, ShieldHalf } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Copy, PanelLeft, Plus, Share, ShieldHalf } from 'lucide-react'
 import React from 'react'
 import WindowControls from './WindowControls'
-import Image from 'next/image'
+
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Arc = () => {
     return (
@@ -35,9 +36,12 @@ const Arc = () => {
                         return <div key={ach.id} className="blog-post">
                             <div className="col-span-2 flex ">
 
-                                <img
+                                <Image
                                     src={ach.image}
                                     alt='image'
+                                    width={300}
+                                    height={200}
+                                    className="object-cover rounded-lg"
                                 />
                             </div>
                             <div className="content">

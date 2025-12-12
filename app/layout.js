@@ -23,7 +23,7 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://blueonion.dev"),
+  metadataBase: new URL("https://macfolio-azure.vercel.app/"),
   title: {
     default: "Blue Onion's Macfolio",
     template: "%s | Blue Onion's Macfolio",
@@ -43,18 +43,18 @@ export const metadata = {
   creator: "Blue Onion",
   publisher: "Blue Onion",
 
-  // OpenGraph metadata for social sharing
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://blueonion.dev",
+    url: "https://macfolio-azure.vercel.app/",
     title: "Blue Onion's Macfolio",
     description:
       "Experience a stunning macOS-style portfolio showcasing creative work with a smooth, interactive interface inspired by Apple's design language.",
     siteName: "Blue Onion's Macfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/images/previewPic.png",
         width: 1200,
         height: 630,
         alt: "Blue Onion's Macfolio Preview",
@@ -62,28 +62,9 @@ export const metadata = {
     ],
   },
 
-  // Twitter Card metadata
-  twitter: {
-    card: "summary_large_image",
-    title: "Blue Onion's Macfolio",
-    description:
-      "Experience a stunning macOS-style portfolio showcasing creative work with a smooth, interactive interface inspired by Apple's design language.",
-    creator: "@blueonion",
-    images: ["/twitter-image.png"],
-  },
 
-  // Viewport and theme
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
 
-  // Additional SEO
+
   robots: {
     index: true,
     follow: true,
@@ -96,12 +77,18 @@ export const metadata = {
     },
   },
 
-  // Verification (add your verification codes)
-  verification: {
-    google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-  },
+
+ 
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
 export default function RootLayout({ children }) {

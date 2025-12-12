@@ -4,7 +4,7 @@ import useLocationStore from '@/store/location'
 import useWindowStore from '@/store/window'
 import { useGSAP } from '@gsap/react'
 import clsx from 'clsx'
-import gsap from 'gsap'
+
 import { Draggable } from 'gsap/Draggable'
 import Image from 'next/image'
 import React from 'react'
@@ -14,11 +14,11 @@ const Home = () => {
     const { setActiveLocation } = useLocationStore();
     const { openWindow } = useWindowStore();
     useGSAP(() => {
-        Draggable.create(".folder", {
+        const instances = Draggable.create(".folder", {
             bounds: "main",
             type: "x,y"
         })
-        
+        return () => instances?.forEach((d) => d.kill())
     }, [])
     const openProject = (project) => {
         setActiveLocation(project);

@@ -1,0 +1,76 @@
+.button {
+  --color-surface-white: #ffffff;
+  --color-just-black: #000000;
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  align-items: center;
+  background: 0 0;
+  border: none;
+  border-radius: 6.25rem;
+  color: var(--color-surface-white);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  gap: 0.363636em;
+  justify-content: center;
+  letter-spacing: -0.01em;
+  line-height: 1.04545;
+  overflow: hidden;
+  padding: 0.9375rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.button--stroke:after {
+  border: 0.125rem solid var(--color-surface-white);
+  border-radius: 6.25rem;
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button__label {
+  position: relative;
+  text-align: center;
+  transition: color 50ms var(--ease-in-out-quart);
+  z-index: 2;
+}
+
+.button--stroke:hover .button__label {
+  color: var(--color-just-black);
+  transition: color 0.15s var(--ease-in-out-quart);
+}
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+  overflow: hidden;
+  border-radius: 6.25rem;
+}
+
+.button__flair:before {
+  aspect-ratio: 1/1;
+  background-color: var(--color-surface-white);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 200%;
+}

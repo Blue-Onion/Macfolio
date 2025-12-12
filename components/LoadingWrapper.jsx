@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/all'
-import Image from 'next/image'
+
 
 export default function LoadingWrapper({ children }) {
     const [isReady, setIsReady] = useState(false)
@@ -11,7 +11,7 @@ export default function LoadingWrapper({ children }) {
     const maskRef = useRef(null)
 
     useEffect(() => {
-        setIsReady(true)
+        setTimeout(() => setIsReady(true), 0)
     }, [])
 
     useEffect(() => {
@@ -23,14 +23,15 @@ export default function LoadingWrapper({ children }) {
         )
 
         tl.to(maskRef.current, {
-            '--mask-size': '170%',
-            duration: 1.3,
-            ease: "expo.out"
+            '--mask-size': '50%',
+            duration: 0.6,
+            ease: "back.out(1)"
         })
 
         tl.to(maskRef.current, {
             opacity: 0,
-            duration: 0,
+            duration: 0.2,
+            ease:"back.in",
             onComplete: () => gsap.set(maskRef.current, { display: 'none' })
         })
 
