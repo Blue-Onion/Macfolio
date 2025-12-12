@@ -19,13 +19,15 @@ import Home from '@/components/Home'
 import TextFile from '@/windows/TextFile'
 import ImgFile from '@/windows/ImgFile'
 import Gallery from '@/windows/Gallery'
+import { SplitText } from 'gsap/SplitText'
 
 gsap.registerPlugin(Draggable)
+gsap.registerPlugin(SplitText)
 
 const Page = () => {
   return (
     <LoadingWrapper>
-        <Navbar />
+      <Navbar />
       <main>
         <Welcome />
         <Dock />

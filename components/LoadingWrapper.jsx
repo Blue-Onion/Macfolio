@@ -31,7 +31,7 @@ export default function LoadingWrapper({ children }) {
         tl.to(maskRef.current, {
             opacity: 0,
             duration: 0.2,
-            ease:"back.in",
+            ease: "back.in",
             onComplete: () => gsap.set(maskRef.current, { display: 'none' })
         })
 
@@ -103,8 +103,8 @@ export default function LoadingWrapper({ children }) {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
 
-                        maskImage: "url('/images/macos.jpg')",
-                        WebkitMaskImage: "url('/images/macos.jpg')",
+                        maskImage: "url('/images/logo.svg')",
+                        WebkitMaskImage: "url('/images/logo.svg')",
 
                         maskRepeat: "no-repeat",
                         WebkitMaskRepeat: "no-repeat",
