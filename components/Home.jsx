@@ -18,13 +18,7 @@ const Home = () => {
             bounds: "main",
             type: "x,y"
         })
-        gsap.from(".folder", {
-            duration: 0.5,
-            opacity: 0,
-            scale: 2,
-            stagger: 0.05,
-            ease: "power3.out"
-        })
+        
     }, [])
     const openProject = (project) => {
         setActiveLocation(project);
