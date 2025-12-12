@@ -53,7 +53,7 @@ const dockApps = [
   },
   {
     id: "arc",
-    name: "Articles", // was "arc"
+    name: "Achievements", // was "arc"
     icon: "arc.png",
     canOpen: true,
   },
