@@ -3,6 +3,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import { useRef } from "react"
 
 const FONT_WEIGHT = {
@@ -64,7 +65,17 @@ const Welcome = () => {
 
     useGSAP(() => {
         const titleHoverEffcet = setUpHover(titleRef.current, "title")
+        const titleText=new SplitText(titleRef.current,{type:"words,chars"})
+        const subtitleText=new SplitText(subtitleRef.current,{type:"words,chars"})
         const subtitleHoverEffect = setUpHover(subtitleRef.current, "subtitle")
+ gsap.from(titleText.chars, {
+            duration: 1,
+            scale: 1.5,
+            opacity: 0,
+            ease: "power3.out",
+            stagger: 0.05   
+        })
+        gsap.fromTo(subtitleText.words,{opacity:0,x:20},{opacity:1,x:0,stagger:0.02,duration:0.5})
         return () => {
             titleHoverEffcet()
             subtitleHoverEffect()
