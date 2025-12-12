@@ -54,7 +54,12 @@ const setUpHover = (cont, type) => {
 }
 const renderText = (text, className, baseWeight) => {
     return [...text].map((char, i) => (
-        <span key={i} className={className} style={{ fontVariationSettings: `"wght" ${baseWeight}` }}>
+        <span
+            key={i}
+            aria-hidden="true"
+            className={className}
+            style={{ fontVariationSettings: `"wght" ${baseWeight}` }}
+        >
             {char === " " ? "\u00a0" : char}
         </span>
     ))
@@ -65,10 +70,10 @@ const Welcome = () => {
 
     useGSAP(() => {
         const titleHoverEffcet = setUpHover(titleRef.current, "title")
-      
+
         const subtitleHoverEffect = setUpHover(subtitleRef.current, "subtitle")
-      
-       
+
+
         return () => {
             titleHoverEffcet()
             subtitleHoverEffect()
