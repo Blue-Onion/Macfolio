@@ -30,6 +30,7 @@ const Gallery = () => {
                                 className={clsx(item.id === activeGalleryLocation?.id ? "" : "filter brightness-0 saturate-100")}
                                 height={18}
                                 width={18}
+loading='lazy'
                                 src={item.icon}
                                 alt={item.name}
                             />
