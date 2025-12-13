@@ -98,7 +98,6 @@ export default function LoadingWrapper({ children }) {
             >
                 <div
                     className="absolute inset-0"
-                    priority="high"
                     style={{
                         backgroundImage: "url('/images/wallpaper.png')",
                         backgroundSize: "cover",
