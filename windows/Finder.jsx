@@ -127,7 +127,7 @@ const Finder = () => {
                             e.stopPropagation();
                             openItem(item);
                         }} className={item.position || ""}>
-                            <Image src={getItemIcon(item)} alt={item.name} width={40} height={40} />
+                            <Image src={getItemIcon(item)} alt={item.name} width={40} height={40} sizes="(max-width: 768px) 100vw, 20vw" />
                             <p className='text-sm truncate'>{item.name}</p>
                         </li>
                     })}

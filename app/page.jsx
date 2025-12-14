@@ -5,20 +5,16 @@ import React from 'react'
 import gsap from 'gsap'
 import Draggable from 'gsap/Draggable'
 
-import Terminal from '@/windows/Terminal'
+import dynamic from 'next/dynamic'
+import {Home,TextFile,ImgFile,Gallery,Arc,Resume,Contact,Finder} from './index'
+const Terminal = dynamic(() => import('@/windows/Terminal'), { ssr: false })
 import Navbar from '@/components/Navbar'
 import Welcome from '@/components/Welcome'
 import Dock from '@/components/Dock'
 import LoadingWrapper from '@/components/LoadingWrapper'
 
-import Arc from '@/windows/Arc'
-import Resume from '@/windows/Resume'
-import Finder from '@/windows/Finder'
-import Contact from '@/windows/Contact'
-import Home from '@/components/Home'
-import TextFile from '@/windows/TextFile'
-import ImgFile from '@/windows/ImgFile'
-import Gallery from '@/windows/Gallery'
+// Dynamic imports for heavy window components
+
 import { SplitText } from 'gsap/SplitText'
 
 gsap.registerPlugin(Draggable)

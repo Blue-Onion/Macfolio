@@ -30,7 +30,8 @@ const Gallery = () => {
                                 className={clsx(item.id === activeGalleryLocation?.id ? "" : "filter brightness-0 saturate-100")}
                                 height={18}
                                 width={18}
-loading='lazy'
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                loading='lazy'
                                 src={item.icon}
                                 alt={item.name}
                             />
@@ -45,7 +46,7 @@ loading='lazy'
     const openItem = (item) => {
         if (item.fileType === "img") {
             console.log(item);
-            
+
             return openWindow("imgfile", item)
         }
         if (item.kind === "folder") {
@@ -65,7 +66,7 @@ loading='lazy'
                 <div className="gallery flex-1 overflow-auto">
                     <ul>
                         {activeGalleryLocation?.children?.map((item) => {
-                            
+
                             return (
                                 <li key={item.id} className={clsx(item.id === activeGalleryLocation?.id ? "active" : "not-active")} onClick={() => openItem(item)}>
                                     <Image height={400} width={400} src={item.imageUrl} alt={item.name} />

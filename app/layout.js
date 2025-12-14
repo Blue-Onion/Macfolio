@@ -43,7 +43,6 @@ export const metadata = {
   creator: "Blue Onion",
   publisher: "Blue Onion",
 
-
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,9 +60,17 @@ export const metadata = {
       },
     ],
   },
-
-
-
+  twitter: {
+    card: "summary_large_image",
+    title: "Blue Onion's Macfolio",
+    description:
+      "Experience a stunning macOS-style portfolio showcasing creative work.",
+    images: ["/images/previewPic.png"],
+    creator: "@Blue_Onion_3480",
+  },
+  alternates: {
+    canonical: "https://macfolio-azure.vercel.app/",
+  },
 
   robots: {
     index: true,
@@ -76,9 +83,6 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-
-
- 
 };
 
 export const viewport = {
