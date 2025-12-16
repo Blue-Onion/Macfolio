@@ -87,7 +87,7 @@ const achievements = [
   {
     id: 3,
     title: "LeetCode Competitive Programming",
-    date: "2004 — Present",
+    date: "2024 — Present",
     username: "blueonion",
     image: "/images/leetcode.png", // placeholder
     link: "https://leetcode.com/u/Blue_onion/",
