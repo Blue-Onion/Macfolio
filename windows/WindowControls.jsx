@@ -1,6 +1,6 @@
 "use client"
 import useWindowStore from '@/store/window'
-import { Minus, Maximize2, X, XIcon } from 'lucide-react'
+import { Minus, Maximize2, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -10,7 +10,7 @@ const WindowControls = ({ target }) => {
 
   return (
     <>
-    <div id="window-controls" className="items-center gap-[6px] hidden md:flex">
+    <div id="window-controls" className="items-center gap-[6px] hidden sm:flex">
       <div
         className="close flex items-center justify-center"
         onMouseEnter={() => setHover("close")}
@@ -37,7 +37,7 @@ const WindowControls = ({ target }) => {
         {hover === "maximize" && <Maximize2 size={10} className="font-bold  pointer-events-none" />}
       </div>
     </div>
-    <div className="md:hidden  w-xs">
+    <div className="sm:hidden  w-xs">
       <span  onClick={() => closeWindow(target)} className="font-bold    text-black">
 <XIcon className='font-bold' size={25}/>
       </span>
