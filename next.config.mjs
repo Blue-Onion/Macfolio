@@ -1,11 +1,5 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
-  experimental: {},
-  turbopack: {
-    root: process.cwd(),
-  },
+  output: "export",
 };
 
 export default nextConfig;
