@@ -44,6 +44,7 @@ const Finder = () => {
         return item.kind === "folder" ? "/images/folder.jpg" : item.icon
     }
     const openItem = (item) => {
+
         if (!item) return
         if (item.id === breadCrumb[breadCrumb.length - 2]?.id) {
             setBreadCrumb(breadCrumb.slice(0, breadCrumb.length - 1))
@@ -59,6 +60,7 @@ const Finder = () => {
             setBreadCrumb([...breadCrumb, item])
             return
         }
+        
 
         return openWindow(`${item.fileType}${item.kind}`, item)
 
