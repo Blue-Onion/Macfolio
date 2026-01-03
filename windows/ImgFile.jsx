@@ -13,18 +13,21 @@ const ImgFile = () => {
 
   return (
     <>
-      <div id='' className='flex  justify-between p-3'>
+      <div className="relative flex items-center p-3">
         <WindowControls target="imgfile" />
-        <h2 className='text-gray-500 font-bold'>Image File</h2>
-        <span></span>
+
+        <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
+          Image File
+        </h2>
       </div>
-      <div id='' className='p-0 mt-20 md:mt-0'>
+      <div className='p-0 pt-4 sm:pt-0 sm:mt-0'>
         {imageUrl && <Image className='' height={800} width={800} src={imageUrl} alt="" />}
         <p className="">
           {description}
         </p>
       </div>
     </>
+
   )
 }
 const imgFileWindow = WindowWrapper(ImgFile, "imgfile")

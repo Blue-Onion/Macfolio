@@ -60,7 +60,7 @@ const Finder = () => {
             setBreadCrumb([...breadCrumb, item])
             return
         }
-        
+
 
         return openWindow(`${item.fileType}${item.kind}`, item)
 
@@ -95,6 +95,7 @@ const Finder = () => {
     }
 
 
+
     return (
         <>
             <div className="flex flex-col md:flex-row gap-4 p-2 h-full">
@@ -106,12 +107,12 @@ const Finder = () => {
                     {renderList("Work", locations.work.children)}
 
                 </div>
-                <div className="topBar mb-6 md:hidden flex">
+                <div className="relative md:hidden flex items-center p-3">
                     <WindowControls target="finder" />
-                    <div className="tile pr-8 flex w-full justify-start  items-center">
-                        <h3 className='text-lg  truncate font-bold'>{activeLocation.name}</h3>
-                    </div>
 
+                    <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
+                        {activeLocation?.name}
+                    </h2>
                 </div>
                 <div className="controls p-2 md:hidden">
                     <button className={`flex ${breadCrumb.length === 1 ? "opacity-50 cursor-not-allowed" : ""}  items-center gap-2`}
