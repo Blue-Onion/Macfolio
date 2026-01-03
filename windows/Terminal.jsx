@@ -9,13 +9,12 @@ import WindowControls from './WindowControls'
 const Terminal = () => {
   return (
     <>
-     <div className='text-gray-600 border-b gap-5 border-gray-200 p-2 flex'>
-        <WindowControls target='terminal' />
+    <div className="relative flex items-center p-3">
+        <WindowControls target="terminal" />
 
-        <h3 className='font-extrabold'>
+        <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
           Tech Stack
-        </h3>
-
+        </h2>
       </div>
       <div className="techstack">
         <p>
