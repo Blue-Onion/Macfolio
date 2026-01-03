@@ -393,44 +393,8 @@ body {
     }
   }
 }
-.tahoe-sidebar {
-  width: 240px; /* Standard sidebar width */
-  padding: 20px 0;
-  margin: 10px 0 10px 10px; /* Creates the "floating" effect with margin from window edge */
-  background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
-  backdrop-filter: blur(20px) saturate(180%); /* Key liquid glass effect */
-  border-radius: 8px; /* Rounded corners for the floating panel */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  /* Add a very subtle "liquid" reflection/gradient here if desired for extra realism */
-}
 
-.tahoe-sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.tahoe-sidebar li {
-  padding: 10px 20px;
-  color: #fff;
-  cursor: pointer;
-  font-family: sans-serif;
-  transition: background-color 0.2s;
-}
 
-.tahoe-sidebar li:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
 
-/* Optional: for a dark mode look */
-@media (prefers-color-scheme: dark) {
-  .tahoe-sidebar {
-    background-color: rgba(25, 25, 25, 0.1);
-    border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-  .tahoe-sidebar li {
-    color: #f0f0f0;
-  }
-}
+
