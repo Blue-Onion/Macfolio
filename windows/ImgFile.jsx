@@ -12,21 +12,21 @@ const ImgFile = () => {
   const { imageUrl, description } = data;
 
   return (
-<>
+    <>
       <div className="relative flex items-center p-3">
-  <WindowControls target="imgfile" />
+        <WindowControls target="imgfile" />
 
-  <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
-    Image File
-  </h2>
-</div>
-      <div id='' className='p-0 mt-20 sm:mt-0'>
+        <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
+          Image File
+        </h2>
+      </div>
+      <div className='p-0 pt-4 sm:pt-0 sm:mt-0'>
         {imageUrl && <Image className='' height={800} width={800} src={imageUrl} alt="" />}
         <p className="">
           {description}
         </p>
       </div>
-</>
+    </>
 
   )
 }

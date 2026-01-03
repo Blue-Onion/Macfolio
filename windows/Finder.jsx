@@ -107,11 +107,11 @@ const Finder = () => {
                     {renderList("Work", locations.work.children)}
 
                 </div>
-                <div className="relative  md:hidden flex items-center p-3">
+                <div className="relative md:hidden flex items-center p-3">
                     <WindowControls target="finder" />
 
                     <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
-                        {activeLocation.name}
+                        {activeLocation?.name}
                     </h2>
                 </div>
                 <div className="controls p-2 md:hidden">
