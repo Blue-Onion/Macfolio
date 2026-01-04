@@ -11,16 +11,12 @@ const Dock = () => {
     const { openWindow, focusWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
     const [isMdOrLarger, setIsMdOrLarger] = useState(false);
-
-    // Check if screen size is md or larger (768px)
     useEffect(() => {
         const checkScreenSize = () => {
             setIsMdOrLarger(window.innerWidth >= 768);
         };
-
         // Check on mount
         checkScreenSize();
-
         // Add resize listener
         window.addEventListener('resize', checkScreenSize);
 
