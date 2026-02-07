@@ -1,47 +1,69 @@
-# MacFolio — A Portfolio That Thinks It’s a Mac 🍎
-A macOS-inspired interactive portfolio built with draggable windows, smooth animations, and multiple mini-apps — all running inside a clean desktop-style UI. Explore projects like opening apps, browse my experience, or peek into my gallery like you’re on a real Mac.
+# Blue Onion's Macfolio
 
----
+A stunning macOS-style portfolio showcasing creative work with a smooth, interactive interface inspired by Apple's design language. Built with Next.js and GSAP for fluid animations.
 
-## 👨‍💻 About Me
-**Aditya Singh Rawat — Full Stack Developer**
+## 🚀 Features
 
-I build fast, interactive web experiences with attention to UI detail and smooth usability. If it feels like it could be a real OS window… that’s the goal.
+- **MacOS Inspired Interface**: A fully responsive and interactive desktop environment mimicking macOS.
+- **Window Management**: Draggable and functional windows for various applications.
+- **Interactive Dock**: Smooth magnification effect on hover, similar to the original macOS dock.
+- **Apps**:
+  - **Terminal**: Interactive command-line interface.
+  - **Finder**: File system navigation to explore project files.
+  - **Arc**: A browser-like experience for viewing web content.
+  - **Gallery**: Image viewer for portfolio highlights.
+  - **Resume, Contact, TextFile**: Dedicated windows for information and content.
+- **Smooth Animations**: Powered by GSAP for realistic movements and transitions.
 
----
+## 🛠️ Tech Stack
 
-## ✨ Features
-- macOS-style desktop interface
-- Draggable & layered window system
-- Smooth window controls (close / minimize / fullscreen)
-- **Terminal app** — shows my tech stack
-- **Finder app** — displays 5 featured projects
-- **Resume window** — resume links
-- **Gallery window** — photo viewer
-- **Contact window** — social links
-- GSAP-powered animations for silky motion
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & CSS Modules
+- **Animations**: [GSAP](https://gsap.com/) (Draggable, SplitText)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Utilities**: `dayjs`, `class-variance-authority`, `clsx`
 
----
+## 📦 Installation
 
-## 🚀 Tech Stack
-| Technology | Use |
-|------------|------|
-| **Next.js** | App framework & routing |
-| **React** | Component system |
-| **Zustand + Immer** | State management |
-| **GSAP** | Animation engine |
-| **Tailwind CSS** | Styling |
+1. **Clone the repository:**
 
----
+   ```bash
+   git clone https://github.com/your-username/macfolio.git
+   cd macfolio
+   ```
 
-## 🧱 Project Structure
-```bash
-.
-├── public
-├── src
-│   ├── components
-│   ├── windows       # Finder, Terminal, Gallery, Resume, Contact
-│   ├── data
-│   ├── state         # Zustand + Immer
-│   ├── animations
-│   └── styles
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
+
+## 📜 Scripts
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run start`: Starts the production server.
+- `npm run lint`: Runs ESLint to check for code quality issues.
+
+## 🎨 Font Optimization
+
+This project uses `next/font/google` to automatically optimize and load inter, Roboto Mono, Georama, and Archivo Black.
+
+## 📄 License
+
+This project is licensed under the MIT License.
