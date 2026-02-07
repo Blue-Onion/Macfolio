@@ -16,7 +16,7 @@ const WindowWrapper = (Component, windowKey) => {
       const el = ref.current;
       if (!el) return;
 
-      // Disable dragging on small screens
+
       const isMobile = window.innerWidth < 640; // sm breakpoint
       if (isMobile) return;
 

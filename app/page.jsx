@@ -25,6 +25,7 @@ gsap.registerPlugin(Draggable)
 gsap.registerPlugin(SplitText)
 
 const Page = () => {
+
   return (
     <LoadingWrapper>
       <Navbar />

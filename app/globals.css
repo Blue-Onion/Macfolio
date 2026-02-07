@@ -350,7 +350,7 @@ body {
   }
 
   #txtfile {
-    @apply w-md absolute top-20 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-md absolute top-20 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl  md:min-w-xl;
 
     h2 {
       @apply font-bold text-sm text-center w-full;

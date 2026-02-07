@@ -17,11 +17,13 @@ const Navbar = () => {
     "subtitle": "Meet the Developer Behind the Code",
     "image": "/images/me.jpeg",
     "description": [
-        "Hey! I’m Blue Onion 👋",
-        "A web developer who loves building sleek, interactive websites that actually work brilliantly.",
-        "I specialize in JavaScript, React, and Next.js, and I’m all about smooth performance, clean UI, great UX, and writing code that doesn’t require a rescue team to debug later.",
-        "When I’m not deep in dev mode, you’ll probably find me tweaking layouts at 2AM, sipping overpriced coffee like it’s fuel for survival, or impulse-buying gadgets I absolutely claim are “for productivity” 😅"
-    ]
+        "Just your friendly neighbourhood developer.",
+        "Based in South Delhi, India — building reliable, scalable, and clean web applications with a strong focus on simplicity and performance.",
+        
+        "I believe good software should be simple, readable, and actually enjoyable to maintain. If something can be simpler, I’ll probably try to make it so.",
+        "Always available for freelance, collaborations, or full-time roles — working with clients worldwide.",
+        "Heads up — big time dev coming up."
+      ]
 }
     return (
         <header>
