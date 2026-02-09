@@ -219,16 +219,22 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-20 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
+    @apply max-w-2xl absolute top-20 left-1/12 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+  
+    /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+  
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
-
+  
     h3 {
       @apply text-xl font-semibold;
     }
-
+  
     ul {
       @apply flex items-center gap-3;
     }

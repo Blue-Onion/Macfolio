@@ -35,9 +35,9 @@ const Contact = () => {
                     <h2 className="text-xl font-semibold">Let’s Connect</h2>
 
                     <p className="text-center text-sm text-gray-600 font-medium">
-                        Wanna build something? Just call
+                        Wanna build something?
                         <span className="font-bold text-gray-800 ml-1">
-                            Your friendly Neighbourhood Blue Onion
+                            Just email and I magically appear
                         </span>
                     </p>
 
