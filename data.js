@@ -66,8 +66,16 @@ const dockApps = [
 ];
 
 const achievements = [
+    {
+      id: 1,
+      title: "LeetCode Competitive Programming",
+      date: "2024 — Present",
+      username: "blueonion",
+      image: "/images/leetcode.png",
+      link: "https://leetcode.com/u/Blue_onion/",
+    },
   {
-    id: 1,
+    id: 2,
     title: "Supernova Hackathon Semifinalist",
     date: "May 2025",
     description:
@@ -76,21 +84,13 @@ const achievements = [
     link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
   },
   {
-    id: 2,
+    id: 3,
     title: "HackCBS Semifinalist",
     date: "November 2025",
     description:
       "Participated in one of the largest student-run hackathons at Delhi University.",
     image: "/images/con.jpeg",
-    link: "https://certificate-link.com/hackcbs",
-  },
-  {
-    id: 3,
-    title: "LeetCode Competitive Programming",
-    date: "2024 — Present",
-    username: "blueonion",
-    image: "/images/leetcode.png",
-    link: "https://leetcode.com/u/Blue_onion/",
+    link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
   },
 ];
 
@@ -391,7 +391,7 @@ const WORK_LOCATION = {
       name: "FinGenie",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[12vh] left-[6vw]",
+      position: "top-[5vh] left-[1vw]",
       windowPosition: "top-[2vh] left-[8vw]",
       children: [
         {
@@ -444,7 +444,7 @@ const WORK_LOCATION = {
       name: "MediCall",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[38vh] left-[11vw]",
+      position: "top-[38vh] left-[6vw]",
       windowPosition: "top-[15vh] left-[25vw]",
       children: [
         {
@@ -497,7 +497,7 @@ const WORK_LOCATION = {
       name: "SensAI",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[18vh] left-[26vw]",
+      position: "top-[18vh] left-[0vw]",
       windowPosition: "top-[30vh] left-[9vw]",
       children: [
         {
@@ -550,7 +550,7 @@ const WORK_LOCATION = {
       name: "Reflect",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[22vh] left-[16vw]",
+      position: "top-[22vh] left-[10vw]",
       windowPosition: "top-[30vh] left-[22vw]",
       children: [
         {
@@ -603,7 +603,7 @@ const WORK_LOCATION = {
       name: "PourTail",
       icon: "/images/folder.jpg",
       kind: "folder",
-      position: "top-[1vh] left-[8vw]",
+      position: "top-[1vh] left-[12vw]",
       windowPosition: "top-[45vh] left-[18vw]",
       children: [
         {
@@ -718,8 +718,7 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
+      
     },
   ],
 };
