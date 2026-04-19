@@ -66,25 +66,25 @@ const dockApps = [
 ];
 
 const achievements = [
-    {
-      id: 1,
-      title: "LeetCode Competitive Programming",
-      date: "2024 — Present",
-      username: "blueonion",
-      image: "/images/leetcode.png",
-      link: "https://leetcode.com/u/Blue_onion/",
-    },
   {
-    id: 2,
-    title: "Supernova Hackathon Semifinalist",
-    date: "May 2025",
-    description:
-      "Built an AI-powered web solution under 24 hours during Supernova.",
-    image: "/images/supernova2.jpeg",
-    link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
+    id: 1,
+    title: "LeetCode Competitive Programming",
+    date: "2024 — Present",
+    username: "blueonion",
+    image: "/images/leetcode.png",
+    link: "https://leetcode.com/u/Blue_onion/",
   },
   {
-    id: 3,
+    id: 2,
+    title: "GDG DSA Competition — 1st Position",
+    date: "March 2026",
+    description:
+      "Secured 1st place in the GDG DSA competition, demonstrating strong problem-solving and algorithmic skills.",
+    image: "/images/gdg-dsa.png",
+    link: "#",
+  },
+  {
+    id: 4,
     title: "HackCBS Semifinalist",
     date: "November 2025",
     description:
@@ -92,38 +92,39 @@ const achievements = [
     image: "/images/con.jpeg",
     link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
   },
+  {
+    id: 3,
+    title: "Supernova Hackathon Semifinalist",
+    date: "May 2025",
+    description:
+      "Built an AI-powered web solution under 24 hours during Supernova.",
+    image: "/images/supernova2.jpeg",
+    link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
+  },
 ];
 
 const techStack = [
-  {
-    category: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "GO"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Next.js", "TailwindCSS", "GSAP"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express.js", "REST API", "JWT"],
-  },
-  {
-    category: "Database",
-    items: ["PostgreSQL", "MongoDB", "Prisma"],
-  },
-  {
-    category: "Deployment",
-    items: ["Docker", "CI/CD", "Vercel"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "GitHub", "Postman", "Linux"],
-  },
-  {
-    category: "Integrations",
-    items: ["Clerk", "Resend", "Gemini AI"],
-  },
-];
+    {
+      category: "Languages",
+      items: ["Go", "Python", "JavaScript", "SQL", "HTML", "CSS"],
+    },
+    {
+      category: "Frontend",
+      items: ["React.js", "Next.js", "Tailwind CSS", "GSAP"],
+    },
+    {
+      category: "Backend",
+      items: ["Node.js", "Express.js", "Gin", "Goose", "SQLC", "PostgreSQL", "MongoDB"],
+    },
+    {
+      category: "DevOps & Tools",
+      items: ["Docker", "Git", "GitHub", "Vercel", "CI/CD", "Postman"],
+    },
+    {
+      category: "Other",
+      items: ["Linux", "REST API Design", "Gemini AI", "YOLOv8"],
+    },
+  ];
 
 const socials = [
   {
@@ -718,7 +719,6 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      
     },
   ],
 };
