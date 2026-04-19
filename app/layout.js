@@ -93,9 +93,10 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: '#000' }}>
       <body
         className={`${inter.variable} ${robotoMono.variable} ${georama.variable} ${archivoBlack.variable} antialiased`}
+        style={{ backgroundColor: '#000' }}
       >
         {children}
       </body>
