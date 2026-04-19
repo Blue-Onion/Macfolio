@@ -66,25 +66,25 @@ const dockApps = [
 ];
 
 const achievements = [
-    {
-      id: 1,
-      title: "LeetCode Competitive Programming",
-      date: "2024 — Present",
-      username: "blueonion",
-      image: "/images/leetcode.png",
-      link: "https://leetcode.com/u/Blue_onion/",
-    },
   {
-    id: 2,
-    title: "Supernova Hackathon Semifinalist",
-    date: "May 2025",
-    description:
-      "Built an AI-powered web solution under 24 hours during Supernova.",
-    image: "/images/supernova2.jpeg",
-    link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
+    id: 1,
+    title: "LeetCode Competitive Programming",
+    date: "2024 — Present",
+    username: "blueonion",
+    image: "/images/leetcode.png",
+    link: "https://leetcode.com/u/Blue_onion/",
   },
   {
-    id: 3,
+    id: 2,
+    title: "GDG DSA Competition — 1st Position",
+    date: "March 2026",
+    description:
+      "Secured 1st place in the GDG DSA competition, demonstrating strong problem-solving and algorithmic skills.",
+    image: "/images/gdg-dsa.png",
+    link: "#",
+  },
+  {
+    id: 4,
     title: "HackCBS Semifinalist",
     date: "November 2025",
     description:
@@ -92,38 +92,39 @@ const achievements = [
     image: "/images/con.jpeg",
     link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
   },
+  {
+    id: 3,
+    title: "Supernova Hackathon Semifinalist",
+    date: "May 2025",
+    description:
+      "Built an AI-powered web solution under 24 hours during Supernova.",
+    image: "/images/supernova2.jpeg",
+    link: "https://drive.google.com/file/d/1tZRSGP3Fw1eGM928KqIxwQ-w-qjfNTkA/view?usp=drive_link",
+  },
 ];
 
 const techStack = [
-  {
-    category: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "GO"],
-  },
-  {
-    category: "Frontend",
-    items: ["React", "Next.js", "TailwindCSS", "GSAP"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express.js", "REST API", "JWT"],
-  },
-  {
-    category: "Database",
-    items: ["PostgreSQL", "MongoDB", "Prisma"],
-  },
-  {
-    category: "Deployment",
-    items: ["Docker", "CI/CD", "Vercel"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "GitHub", "Postman", "Linux"],
-  },
-  {
-    category: "Integrations",
-    items: ["Clerk", "Resend", "Gemini AI"],
-  },
-];
+    {
+      category: "Languages",
+      items: ["Go", "Python", "JavaScript", "SQL", "HTML", "CSS"],
+    },
+    {
+      category: "Frontend",
+      items: ["React.js", "Next.js", "Tailwind CSS", "GSAP"],
+    },
+    {
+      category: "Backend",
+      items: ["Node.js", "Express.js", "Gin", "Goose", "SQLC", "PostgreSQL", "MongoDB"],
+    },
+    {
+      category: "DevOps & Tools",
+      items: ["Docker", "Git", "GitHub", "Vercel", "CI/CD", "Postman"],
+    },
+    {
+      category: "Other",
+      items: ["Linux", "REST API Design", "Gemini AI", "YOLOv8"],
+    },
+  ];
 
 const socials = [
   {
@@ -379,278 +380,322 @@ export {
 };
 
 const WORK_LOCATION = {
-  id: 100,
-  type: "work",
-  name: "Work",
-  icon: "/icons/work.svg",
-  kind: "folder",
-  children: [
-    // ▶ Project 1 - FinGenie
-    {
-      id: 101,
-      name: "FinGenie",
-      icon: "/images/folder.jpg",
-      kind: "folder",
-      position: "top-[5vh] left-[1vw]",
-      windowPosition: "top-[2vh] left-[8vw]",
-      children: [
-        {
-          id: 201,
-          name: "FinGenie Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-7 left-12",
-          description: [
-            "FinGenie is a smart financial assistant built using Next.js and powered by Gemini AI.",
-            "It helps users manage their money with real-time expense tracking and personalized AI insights.",
-            "Includes budgeting, reporting, authentication, server actions, and beautiful chart visualizations.",
-            "Built with Prisma, Tailwind, PostgreSQL and deployed globally using Vercel.",
-          ],
-        },
-        {
-          id: 202,
-          name: "Live Website",
-          icon: "/images/arc.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://fin-genie-five.vercel.app/",
-          position: "top-60 right-[18%]",
-        },
-        {
-          id: 203,
-          name: "Github Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/Blue-Onion/FinGenie",
-          position: "top-29 right-[21%]",
-        },
-        {
-          id: 204,
-          name: "FinGenie.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "bottom-10 right-[60%]",
-          imageUrl: "/images/fingenie.png",
-        },
-      ],
-    },
-
-    // ▶ Project 2 - MediCall
-    {
-      id: 102,
-      name: "MediCall",
-      icon: "/images/folder.jpg",
-      kind: "folder",
-      position: "top-[38vh] left-[6vw]",
-      windowPosition: "top-[15vh] left-[25vw]",
-      children: [
-        {
-          id: 210,
-          name: "MediCall Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-7 left-12",
-          description: [
-            "MediCall is a full-stack doctor appointment and video consultation platform.",
-            "Patients can book, cancel, and manage appointments with real-time status updates and a credit system.",
-            "Built with Next.js, Clerk Auth, Prisma, Neon DB, and Vonage for secure video calls.",
-            "Features doctor verification, responsive UI, and seamless server actions for performance.",
-          ],
-        },
-        {
-          id: 211,
-          name: "Live Demo",
-          icon: "/images/arc.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://medmeet-phi.vercel.app/",
-          position: "top-60 right-[18%]",
-        },
-        {
-          id: 212,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/Blue-Onion/MediCall",
-          position: "top-29 right-[21%]",
-        },
-        {
-          id: 213,
-          name: "MediCall.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "bottom-10 right-[60%]",
-          imageUrl: "/images/medicall.png",
-        },
-      ],
-    },
-
-    // ▶ Project 3 - SensAI
-    {
-      id: 103,
-      name: "SensAI",
-      icon: "/images/folder.jpg",
-      kind: "folder",
-      position: "top-[18vh] left-[0vw]",
-      windowPosition: "top-[30vh] left-[9vw]",
-      children: [
-        {
-          id: 220,
-          name: "SensAI Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-7 left-12",
-          description: [
-            "SensAI is an AI-powered virtual interview coach built to help users practice real interview environments.",
-            "It provides role-specific Q&A sessions, real-time feedback, and personalized improvement guidance.",
-            "Features analytics for progress tracking, mock interviews, and AI-driven performance scoring.",
-            "Built using Next.js, Gemini AI, Prisma, Tailwind, PostgreSQL, and deployed on Vercel.",
-          ],
-        },
-        {
-          id: 221,
-          name: "Live Demo",
-          icon: "/images/arc.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://sensai-beta.vercel.app/",
-          position: "top-60 right-[18%]",
-        },
-        {
-          id: 222,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/Blue-Onion/Sensai",
-          position: "top-29 right-[21%]",
-        },
-        {
-          id: 223,
-          name: "SensAI.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "bottom-10 right-[60%]",
-          imageUrl: "/images/sensai.png",
-        },
-      ],
-    },
-
-    // ▶ Project 4 - Reflect
-    {
-      id: 104,
-      name: "Reflect",
-      icon: "/images/folder.jpg",
-      kind: "folder",
-      position: "top-[22vh] left-[10vw]",
-      windowPosition: "top-[30vh] left-[22vw]",
-      children: [
-        {
-          id: 230,
-          name: "Reflect Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-7 left-12",
-          description: [
-            "Reflect is a journaling and mood-tracking web application built to help users understand their emotional patterns.",
-            "Users can create and organize journal entries, analyze mood trends, and securely store data in the cloud.",
-            "Features collections, mood insights, and Clerk-powered authentication for secure access.",
-            "Built with Next.js, Prisma, PostgreSQL, Tailwind CSS, and deployed on Vercel.",
-          ],
-        },
-        {
-          id: 231,
-          name: "Live Demo",
-          icon: "/images/arc.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://reflect-six-mu.vercel.app/",
-          position: "top-60 right-[18%]",
-        },
-        {
-          id: 232,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/Blue-Onion/Reflect",
-          position: "top-29 right-[21%]",
-        },
-        {
-          id: 233,
-          name: "Reflect.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "bottom-10 right-[60%]",
-          imageUrl: "/images/reflect.png",
-        },
-      ],
-    },
-
-    // ▶ Project 5 - PourTail
-    {
-      id: 105,
-      name: "PourTail",
-      icon: "/images/folder.jpg",
-      kind: "folder",
-      position: "top-[1vh] left-[12vw]",
-      windowPosition: "top-[45vh] left-[18vw]",
-      children: [
-        {
-          id: 240,
-          name: "PourTail Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-7 left-12",
-          description: [
-            "PourTail is a beautifully animated cocktail landing page built with Next.js and GSAP.",
-            "Features smooth scroll-triggered animations and interactive UI transitions.",
-            "Focused on clean design, motion experience, and modern responsive styling.",
-            "Powered with GSAP, Tailwind CSS, and deployed live via Vercel.",
-          ],
-        },
-        {
-          id: 241,
-          name: "Live Demo",
-          icon: "/images/arc.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://gsap-learining.vercel.app",
-          position: "top-60 right-[18%]",
-        },
-        {
-          id: 242,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/Blue-Onion/Pour-Tail",
-          position: "top-29 right-[21%]",
-        },
-        {
-          id: 243,
-          name: "PourTail.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "bottom-10 right-[60%]",
-          imageUrl: "/images/moijito.png",
-        },
-      ],
-    },
-  ],
-};
+    id: 100,
+    type: "work",
+    name: "Work",
+    icon: "/icons/work.svg",
+    kind: "folder",
+    children: [
+      // ▶ Project 1 - FinGenie
+      {
+        id: 101,
+        name: "FinGenie",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[5vh] left-[1vw]",
+        windowPosition: "top-[2vh] left-[8vw]",
+        children: [
+          {
+            id: 201,
+            name: "FinGenie Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "FinGenie is a smart financial assistant built using Next.js and powered by Gemini AI.",
+              "It helps users manage their money with real-time expense tracking and personalized AI insights.",
+              "Includes budgeting, reporting, authentication, server actions, and beautiful chart visualizations.",
+              "Built with Prisma, Tailwind, PostgreSQL and deployed globally using Vercel.",
+            ],
+          },
+          {
+            id: 202,
+            name: "Live Website",
+            icon: "/images/arc.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://fin-genie-five.vercel.app/",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 203,
+            name: "Github Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/FinGenie",
+            position: "top-29 right-[21%]",
+          },
+          {
+            id: 204,
+            name: "FinGenie.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/fingenie.png",
+          },
+        ],
+      },
+  
+      // ▶ Project 2 - MediCall
+      {
+        id: 102,
+        name: "MediCall",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[38vh] left-[6vw]",
+        windowPosition: "top-[15vh] left-[25vw]",
+        children: [
+          {
+            id: 210,
+            name: "MediCall Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "MediCall is a full-stack doctor appointment and video consultation platform.",
+              "Patients can book, cancel, and manage appointments with real-time status updates and a credit system.",
+              "Built with Next.js, Clerk Auth, Prisma, Neon DB, and Vonage for secure video calls.",
+              "Features doctor verification, responsive UI, and seamless server actions for performance.",
+            ],
+          },
+          {
+            id: 211,
+            name: "Live Demo",
+            icon: "/images/arc.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://medmeet-phi.vercel.app/",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 212,
+            name: "GitHub Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/MediCall",
+            position: "top-29 right-[21%]",
+          },
+          {
+            id: 213,
+            name: "MediCall.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/medicall.png",
+          },
+        ],
+      },
+  
+      // ▶ Project 3 - SensAI
+      {
+        id: 103,
+        name: "SensAI",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[18vh] left-[0vw]",
+        windowPosition: "top-[30vh] left-[9vw]",
+        children: [
+          {
+            id: 220,
+            name: "SensAI Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "SensAI is an AI-powered virtual interview coach built to help users practice real interview environments.",
+              "It provides role-specific Q&A sessions, real-time feedback, and personalized improvement guidance.",
+              "Features analytics for progress tracking, mock interviews, and AI-driven performance scoring.",
+              "Built using Next.js, Gemini AI, Prisma, Tailwind, PostgreSQL, and deployed on Vercel.",
+            ],
+          },
+          {
+            id: 221,
+            name: "Live Demo",
+            icon: "/images/arc.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://sensai-beta.vercel.app/",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 222,
+            name: "GitHub Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/Sensai",
+            position: "top-29 right-[21%]",
+          },
+          {
+            id: 223,
+            name: "SensAI.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/sensai.png",
+          },
+        ],
+      },
+  
+      // ▶ Project 4 - Reflect
+      {
+        id: 104,
+        name: "Reflect",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[22vh] left-[10vw]",
+        windowPosition: "top-[30vh] left-[22vw]",
+        children: [
+          {
+            id: 230,
+            name: "Reflect Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "Reflect is a journaling and mood-tracking web application built to help users understand their emotional patterns.",
+              "Users can create and organize journal entries, analyze mood trends, and securely store data in the cloud.",
+              "Features collections, mood insights, and Clerk-powered authentication for secure access.",
+              "Built with Next.js, Prisma, PostgreSQL, Tailwind CSS, and deployed on Vercel.",
+            ],
+          },
+          {
+            id: 231,
+            name: "Live Demo",
+            icon: "/images/arc.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://reflect-six-mu.vercel.app/",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 232,
+            name: "GitHub Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/Reflect",
+            position: "top-29 right-[21%]",
+          },
+          {
+            id: 233,
+            name: "Reflect.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/reflect.png",
+          },
+        ],
+      },
+  
+      // ▶ Project 5 - PourTail
+      {
+        id: 105,
+        name: "PourTail",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[1vh] left-[12vw]",
+        windowPosition: "top-[45vh] left-[18vw]",
+        children: [
+          {
+            id: 240,
+            name: "PourTail Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "PourTail is a beautifully animated cocktail landing page built with Next.js and GSAP.",
+              "Features smooth scroll-triggered animations and interactive UI transitions.",
+              "Focused on clean design, motion experience, and modern responsive styling.",
+              "Powered with GSAP, Tailwind CSS, and deployed live via Vercel.",
+            ],
+          },
+          {
+            id: 241,
+            name: "Live Demo",
+            icon: "/images/arc.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://gsap-learining.vercel.app",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 242,
+            name: "GitHub Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/Pour-Tail",
+            position: "top-29 right-[21%]",
+          },
+          {
+            id: 243,
+            name: "PourTail.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/moijito.png",
+          },
+        ],
+      },
+  
+      // ▶ Project 6 - Medusa
+      {
+        id: 106,
+        name: "Medusa",
+        icon: "/images/folder.jpg",
+        kind: "folder",
+        position: "top-[30vh] left-[0vw]",
+        windowPosition: "top-[15vh] left-[15vw]",
+        children: [
+          {
+            id: 250,
+            name: "Medusa Project.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-7 left-12",
+            description: [
+              "Medusa is a multi-camera incident monitoring and event logging platform written in Go.",
+              "Designed as a pluggable event pipeline where AI detection engines like YOLOv8 can be seamlessly integrated.",
+              "Supports webcam, local video, and RTSP streams with concurrent multi-camera processing via Go routines.",
+              "Features structured JSONL logging, a built-in CLI for querying logs, and CSV export for analysis.",
+            ],
+          },
+          {
+            id: 251,
+            name: "GitHub Repo",
+            icon: "/images/github.png",
+            kind: "file",
+            fileType: "url",
+            href: "https://github.com/Blue-Onion/medusa",
+            position: "top-60 right-[18%]",
+          },
+          {
+            id: 252,
+            name: "Medusa.png",
+            icon: "/images/image.png",
+            kind: "file",
+            fileType: "img",
+            position: "bottom-10 right-[60%]",
+            imageUrl: "/images/medusa.png",
+          },
+        ],
+      },
+    ],
+  };
 
 const ABOUT_LOCATION = {
   id: 2,
@@ -718,7 +763,6 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      
     },
   ],
 };

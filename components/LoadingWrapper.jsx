@@ -99,7 +99,7 @@ export default function LoadingWrapper({ children }) {
                 <div
                     className="absolute inset-0"
                     style={{
-                        backgroundImage: "url('/images/wallpaper.png')",
+                        backgroundImage: "url('/images/astronaut2.png')",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
 
