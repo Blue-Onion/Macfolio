@@ -1,30 +1,15 @@
 "use client"
-import { navLinks } from '@/data'
+import { navLinks, aboutMe } from '@/data'
 import useWindowStore from '@/store/window'
 import dayjs from 'dayjs'
 import Image from 'next/image'
+import Link from 'next/link'
+import { author } from '@/lib/site'
 
 
 const Navbar = () => {
     const { openWindow } = useWindowStore()
-    const adityaData={
-    "id": 4,
-    "name": "about-me.txt",
-    "icon": "/images/txt.png",
-    "kind": "file",
-    "fileType": "txt",
-    "position": "top-60 left-5",
-    "subtitle": "Meet the Developer Behind the Code",
-    "image": "/images/me.jpeg",
-    "description": [
-        "Just your friendly neighbourhood developer.",
-        "Based in South Delhi, India — building reliable, scalable, and clean web applications with a strong focus on simplicity and performance.",
-        
-        "I believe good software should be simple, readable, and actually enjoyable to maintain. If something can be simpler, I’ll probably try to make it so.",
-        "Always available for freelance, collaborations, or full-time roles — working with clients worldwide.",
-        "Heads up — big time dev coming up."
-      ]
-}
+    const adityaData = aboutMe
     return (
         <header>
             <nav>
@@ -35,7 +20,7 @@ const Navbar = () => {
                     <Image
                         height={15}
                         width={15}
-                        alt='logo'
+                        alt={`${author} Macfolio logo`}
                         src='/images/logo.svg'
                     />
                     <p className="font-bold cursor-pointer"
@@ -46,9 +31,11 @@ const Navbar = () => {
                     <ul>
                         {
                             navLinks.map((item) => {
-                                return <li className='cursor-pointer hover:underline transition-all' onClick={() => openWindow(item.type)} key={item.id}>
-
-                                    {item.name}
+                                return <li className='cursor-pointer hover:underline transition-all' key={item.id}>
+                                    {/* Real crawlable href; JS intercepts to open the window in-app */}
+                                    <Link href={item.href} onClick={(e) => { e.preventDefault(); openWindow(item.type) }}>
+                                        {item.name}
+                                    </Link>
                                 </li>
                             })
                         }

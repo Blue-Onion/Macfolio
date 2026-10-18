@@ -8,7 +8,7 @@ body {
   overflow: hidden;
   height: 100dvh;
 
-  background-image: url("/images/astronaut2.png");
+  background-image: url("/images/astronaut2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -73,11 +73,27 @@ body {
   }
 
   #welcome {
-    @apply text-white flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
+    @apply text-white flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-6;
+
+    h1 {
+      @apply max-sm:w-full max-sm:text-center sm:text-left;
+    }
+
+    .welcomeTextSub,
+    .welcomeTextMain {
+      @apply flex flex-wrap max-sm:justify-center sm:justify-start;
+    }
+
+    .welcome-word {
+      @apply inline-block whitespace-nowrap;
+    }
+
+    .welcomeTextSub .welcome-word:not(:last-child) {
+      margin-right: 0.3em;
+    }
 
     .small-screen {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
-
       p {
         @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
       }

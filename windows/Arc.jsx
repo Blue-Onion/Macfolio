@@ -38,7 +38,7 @@ const Arc = () => {
 
                                 <Image
                                     src={ach.image}
-                                    alt='image'
+                                    alt={ach.title}
                                     width={300}
                                     height={200}
                                     className="object-cover rounded-lg"

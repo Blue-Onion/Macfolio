@@ -23,7 +23,7 @@ const Contact = () => {
                     <div className="rounded-full overflow-hidden border border-gray-300 shadow-xl">
                         <Image
                             src="/images/me.jpeg"
-                            alt="contact"
+                            alt="Portrait of Aditya Singh Rawat"
                             width={140}
                             height={140}
                         />

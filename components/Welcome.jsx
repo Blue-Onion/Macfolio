@@ -16,6 +16,7 @@ const setUpHover = (cont, type) => {
   const { min, max, base } = FONT_WEIGHT[type];
 
   let letterCenters = [];
+  let rafId = null;
 
   const calculateCenters = () => {
     const { left } = cont.getBoundingClientRect();
@@ -40,15 +41,24 @@ const setUpHover = (cont, type) => {
     const { left } = cont.getBoundingClientRect();
     const mouseX = e.clientX - left;
 
-    letters.forEach((letter, i) => {
-      const distance = Math.abs(mouseX - letterCenters[i]);
-      const intensity = Math.exp(-(distance ** 2) / 20000);
-      const weight = min + (max - min) * intensity;
-      animateLetter(letter, weight);
+    // One rAF per frame instead of running tweens on every mousemove event.
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      letters.forEach((letter, i) => {
+        const distance = Math.abs(mouseX - letterCenters[i]);
+        const intensity = Math.exp(-(distance ** 2) / 20000);
+        const weight = min + (max - min) * intensity;
+        animateLetter(letter, weight);
+      });
     });
   };
 
   const handleMouseLeave = () => {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
     letters.forEach((letter) => animateLetter(letter, base));
   };
 
@@ -63,13 +73,18 @@ const setUpHover = (cont, type) => {
 };
 
 const renderText = (text, className, baseWeight) => {
-  return [...text].map((char, i) => (
-    <span
-      key={i}
-      className={`letter ${className}`}
-      style={{ fontVariationSettings: `"wght" ${baseWeight}` }}
-    >
-      {char === " " ? "\u00a0" : char}
+  const words = text.split(" ");
+  return words.map((word, wi) => (
+    <span key={wi} className="welcome-word">
+      {[...word].map((char, i) => (
+        <span
+          key={i}
+          className={`letter ${className}`}
+          style={{ fontVariationSettings: `"wght" ${baseWeight}` }}
+        >
+          {char}
+        </span>
+      ))}
     </span>
   ));
 };
@@ -90,12 +105,29 @@ const Welcome = () => {
 
   return (
     <section id="welcome">
-      <p ref={subtitleRef} className="welcomeTextSub">
-        {renderText("Hey I'm Aditya! Welcome to my ", "text-xl md:text-3xl", 100)}
-      </p>
+      {/* Single descriptive h1 — real text is exposed via the sr-only span,
+          the per-letter animated spans are decorative for assistive tech.
+          The sr-only span sits outside .welcomeText* containers so the
+          SplitText-based intro animation can't split and un-hide it. */}
+      <h1>
+        <span className="sr-only">
+          Hey I&apos;m Aditya Singh Rawat! Welcome to my Macfolio.
+        </span>
+        <span
+          ref={subtitleRef}
+          className="welcomeTextSub block"
+          aria-hidden="true"
+        >
+          {renderText("Hey I'm Aditya! Welcome to my", "text-xl md:text-3xl", 100)}
+        </span>
 
-      <h1 ref={titleRef} className="mt-7 welcomeTextMain">
-        {renderText("Macƒolio.", "italic text-3xl md:text-6xl lg:text-8xl", 500)}
+        <span
+          ref={titleRef}
+          className="mt-2 sm:mt-7 welcomeTextMain block"
+          aria-hidden="true"
+        >
+          {renderText("Macƒolio.", "italic text-3xl md:text-6xl lg:text-8xl", 500)}
+        </span>
       </h1>
     </section>
   );

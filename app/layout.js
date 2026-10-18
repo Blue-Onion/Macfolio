@@ -1,6 +1,15 @@
 import { Inter, Roboto_Mono, Georama, Archivo_Black } from "next/font/google";
 import "./globals.css";
 
+import StructuredData from "@/components/StructuredData";
+import {
+  siteUrl,
+  siteName,
+  author,
+  defaultTitle,
+  defaultDescription,
+} from "@/lib/site";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -22,48 +31,47 @@ const archivoBlack = Archivo_Black({
   weight: "400",
 });
 
-export const metadata = {
-  metadataBase: new URL("https://macfolio-azure.vercel.app/"),
-  title: {
-    default: "Blue Onion's Macfolio",
-    template: "%s | Blue Onion's Macfolio",
-  },
-  description:
-    "Experience a stunning macOS-style portfolio showcasing creative work with a smooth, interactive interface inspired by Apple's design language.",
-  keywords: [
-    "portfolio",
-    "macOS",
-    "design",
-    "creative",
-    "web development",
-    "Blue Onion",
-    "interactive UI",
-  ],
-  authors: [{ name: "Blue Onion" }],
-  creator: "Blue Onion",
-  publisher: "Blue Onion",
+const siteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
+export const metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: defaultDescription,
+  keywords: [
+    "Aditya Singh Rawat",
+    "full-stack developer",
+    "Next.js developer India",
+    "React developer Delhi",
+    "Go developer",
+    "portfolio",
+  ],
+  authors: [{ name: author, url: siteUrl }],
+  creator: author,
+  publisher: author,
+
+  alternates: {
+    canonical: "/",
+  },
+
+  category: "technology",
 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://macfolio-azure.vercel.app/",
-    title: "Blue Onion's Macfolio",
-    description:
-      "Experience a stunning macOS-style portfolio showcasing creative work with a smooth, interactive interface inspired by Apple's design language.",
-    siteName: "Blue Onion's Macfolio",
-    images: [
-      {
-        url: "/images/previewPic.png",
-        width: 1200,
-        height: 630,
-        alt: "Blue Onion's Macfolio Preview",
-      },
-    ],
+    url: siteUrl,
+    title: defaultTitle,
+    description: defaultDescription,
+    siteName: siteName,
   },
 
-
-
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+  },
 
   robots: {
     index: true,
@@ -77,14 +85,12 @@ export const metadata = {
     },
   },
 
-
- 
+  ...(siteVerification ? { verification: { google: siteVerification } } : {}),
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
@@ -93,11 +99,12 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" style={{ backgroundColor: '#000' }}>
+    <html lang="en" style={{ backgroundColor: "#000" }}>
       <body
         className={`${inter.variable} ${robotoMono.variable} ${georama.variable} ${archivoBlack.variable} antialiased`}
-        style={{ backgroundColor: '#000' }}
+        style={{ backgroundColor: "#000" }}
       >
+        <StructuredData />
         {children}
       </body>
     </html>

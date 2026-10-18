@@ -16,6 +16,13 @@ export default function LoadingWrapper({ children }) {
 
     useEffect(() => {
         if (!isReady || !contentRef.current || !maskRef.current) return
+
+        // Respect reduced motion: skip the intro animation entirely.
+        if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            gsap.set(maskRef.current, { display: "none" })
+            return
+        }
+
         const tl = gsap.timeline({ defaults: { ease: "power2.out" } })
         tl.fromTo(maskRef.current,
             { opacity: 1 },
@@ -99,7 +106,7 @@ export default function LoadingWrapper({ children }) {
                 <div
                     className="absolute inset-0"
                     style={{
-                        backgroundImage: "url('/images/astronaut2.png')",
+                        backgroundImage: "url('/images/astronaut2.jpg')",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
 
@@ -118,8 +125,9 @@ export default function LoadingWrapper({ children }) {
                 />
             </div>
 
-            {/* CONTENT BELOW */}
-            <div ref={contentRef} style={{ opacity: 0 }}>
+            {/* CONTENT BELOW — must stay server-rendered and visible for SEO.
+                The opaque mask above covers it during the intro animation. */}
+            <div ref={contentRef}>
                 {children}
             </div>
         </>

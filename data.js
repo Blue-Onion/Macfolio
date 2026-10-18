@@ -3,18 +3,40 @@ const navLinks = [
     id: 1,
     name: "Projects",
     type: "finder",
+    href: "/projects",
   },
   {
     id: 3,
     name: "Contact",
     type: "contact",
+    href: "/contact",
   },
   {
     id: 4,
     name: "Resume",
     type: "resume",
+    href: "/resume",
   },
 ];
+
+const aboutMe = {
+  id: 4,
+  name: "about-me.txt",
+  icon: "/images/txt.png",
+  kind: "file",
+  fileType: "txt",
+  position: "top-60 left-5",
+  subtitle: "Meet the Developer Behind the Code",
+  image: "/images/me.jpeg",
+  heading: "Aditya Singh Rawat — Full-Stack Developer",
+  description: [
+    "Just your friendly neighbourhood developer.",
+    "Based in South Delhi, India — building reliable, scalable, and clean web applications with a strong focus on simplicity and performance.",
+    "I believe good software should be simple, readable, and actually enjoyable to maintain. If something can be simpler, I’ll probably try to make it so.",
+    "Always available for freelance, collaborations, or full-time roles — working with clients worldwide.",
+    "Heads up — big time dev coming up.",
+  ],
+};
 
 const navIcons = [
   {
@@ -377,6 +399,7 @@ export {
   socials,
   photosLinks,
   gallery,
+  aboutMe,
 };
 
 const WORK_LOCATION = {
@@ -434,7 +457,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/fingenie.png",
+            imageUrl: "/images/fingenie.jpg",
           },
         ],
       },
@@ -487,7 +510,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/medicall.png",
+            imageUrl: "/images/medicall.jpg",
           },
         ],
       },
@@ -540,7 +563,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/sensai.png",
+            imageUrl: "/images/sensai.jpg",
           },
         ],
       },
@@ -593,7 +616,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/reflect.png",
+            imageUrl: "/images/reflect.jpg",
           },
         ],
       },
@@ -646,7 +669,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/moijito.png",
+            imageUrl: "/images/moijito.jpg",
           },
         ],
       },
@@ -690,7 +713,7 @@ const WORK_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
-            imageUrl: "/images/medusa.png",
+            imageUrl: "/images/medusa.jpg",
           },
         ],
       },

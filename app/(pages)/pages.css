@@ -1,0 +1,9 @@
+/* Content routes need normal scrolling; the macOS homepage styles in
+   globals.css pin html/body (overflow: hidden, 100dvh, bg image). Reset here. */
+html,
+body {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  background-image: none !important;
+}

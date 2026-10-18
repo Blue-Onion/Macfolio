@@ -17,7 +17,7 @@ const WindowControls = ({ target }) => {
         onMouseLeave={() => setHover(null)}
         onClick={() => closeWindow(target)}
         >
-        {hover === "close" && <Image src="/images/close.png" alt="x" width={10} height={10} className="font-bold  pointer-events-none" />}
+        {hover === "close" && <Image src="/images/close.png" alt="" width={10} height={10} className="font-bold  pointer-events-none" aria-hidden />}
       </div>
 
       <div
