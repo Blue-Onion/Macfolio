@@ -12,10 +12,17 @@
 
 # testing
 /coverage
+
+# editors / IDEs
 /.vscode
+.idea
+
 # next.js
 /.next/
 /out/
+
+# bun
+.bun-debug.log*
 
 # production
 /build
