@@ -10,7 +10,7 @@ const TextFile = () => {
     const { windows } = useWindows();
     const data = windows?.txtfile?.data;
     if (!data) return;
-    const { description, image } = data;
+    const { description, image, highlightBoundaryLines } = data;
     return (
         <>
             <div className="relative flex items-center p-3">
@@ -25,7 +25,8 @@ const TextFile = () => {
                 <div className="flex flex-col space-y-3">
 
                     {description.map((desc, i) => {
-                        return <p key={i} className={`${i == 0 || i == description.length - 1 ? "font-bold w-full text-center" : ""}`}>
+                        const shouldHighlight = highlightBoundaryLines && (i === 0 || i === description.length - 1);
+                        return <p key={i} className={shouldHighlight ? "font-bold w-full text-center" : ""}>
                             {desc}
                         </p>
                     })}
