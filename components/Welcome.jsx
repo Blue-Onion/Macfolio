@@ -111,7 +111,7 @@ const Welcome = () => {
           SplitText-based intro animation can't split and un-hide it. */}
       <h1>
         <span className="sr-only">
-          Hey I&apos;m Aditya Singh Rawat! Welcome to my Macfolio.
+          Aditya Singh Rawat, also known as Blue Onion — full-stack developer and creator of Macfolio.
         </span>
         <span
           ref={subtitleRef}

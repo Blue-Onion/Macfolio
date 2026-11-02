@@ -39,9 +39,12 @@ export const metadata = {
     default: defaultTitle,
     template: `%s | ${siteName}`,
   },
+  applicationName: siteName,
   description: defaultDescription,
   keywords: [
     "Aditya Singh Rawat",
+    "Blue Onion",
+    "Blue-Onion",
     "full-stack developer",
     "Next.js developer India",
     "React developer Delhi",
