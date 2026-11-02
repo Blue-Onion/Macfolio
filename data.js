@@ -29,6 +29,7 @@ const aboutMe = {
   subtitle: "Meet the Developer Behind the Code",
   image: "/images/me.jpeg",
   heading: "Aditya Singh Rawat — Full-Stack Developer",
+  highlightBoundaryLines: true,
   description: [
     "Just your friendly neighbourhood developer.",
     "Based in South Delhi, India — building reliable, scalable, and clean web applications with a strong focus on simplicity and performance.",
@@ -763,6 +764,7 @@ const ABOUT_LOCATION = {
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
       image: "/images/me.jpeg",
+      highlightBoundaryLines: true,
       description: [
         "Hey! I’m Blue Onion 👋",
         "A web developer who loves building sleek, interactive websites that actually work brilliantly.",
