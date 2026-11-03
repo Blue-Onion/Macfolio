@@ -22,7 +22,7 @@ const navLinks = [
 const aboutMe = {
   id: 4,
   name: "about-me.txt",
-  icon: "/images/txt.png",
+  icon: "/images/txt.webp",
   kind: "file",
   fileType: "txt",
   position: "top-60 left-5",
@@ -77,7 +77,7 @@ const dockApps = [
   {
     id: "arc",
     name: "Achievements",
-    icon: "arc.png",
+    icon: "arc.webp",
     canOpen: true,
   },
   {
@@ -94,7 +94,7 @@ const achievements = [
     title: "LeetCode Competitive Programming",
     date: "2024 — Present",
     username: "blueonion",
-    image: "/images/leetcode.png",
+    image: "/images/leetcode.webp",
     link: "https://leetcode.com/u/Blue_onion/",
   },
   {
@@ -103,7 +103,7 @@ const achievements = [
     date: "March 2026",
     description:
       "Secured 1st place in the GDG DSA competition, demonstrating strong problem-solving and algorithmic skills.",
-    image: "/images/gdg-dsa.png",
+    image: "/images/gdg-dsa.webp",
     link: "#",
   },
   {
@@ -190,7 +190,7 @@ const LIBRARY_LOCATION = {
     {
       id: 1,
       name: "Sunset Beach",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
@@ -199,7 +199,7 @@ const LIBRARY_LOCATION = {
     {
       id: 2,
       name: "Mountain Vista",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-10 right-20",
@@ -208,7 +208,7 @@ const LIBRARY_LOCATION = {
     {
       id: 3,
       name: "City Lights",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-40 left-40",
@@ -217,7 +217,7 @@ const LIBRARY_LOCATION = {
     {
       id: 4,
       name: "Forest Path",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 right-80",
@@ -236,7 +236,7 @@ const MEMORIES_LOCATION = {
     {
       id: 1,
       name: "Summer 2024",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-5 left-10",
@@ -245,7 +245,7 @@ const MEMORIES_LOCATION = {
     {
       id: 2,
       name: "Birthday Party",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
@@ -254,7 +254,7 @@ const MEMORIES_LOCATION = {
     {
       id: 3,
       name: "Graduation Day",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
@@ -263,7 +263,7 @@ const MEMORIES_LOCATION = {
     {
       id: 4,
       name: "Graduation2 Day",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
@@ -282,7 +282,7 @@ const PLACES_LOCATION = {
     {
       id: 1,
       name: "Paris",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
@@ -291,7 +291,7 @@ const PLACES_LOCATION = {
     {
       id: 2,
       name: "Tokyo",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-20 left-80",
@@ -300,7 +300,7 @@ const PLACES_LOCATION = {
     {
       id: 3,
       name: "New York",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 right-20",
@@ -309,7 +309,7 @@ const PLACES_LOCATION = {
     {
       id: 4,
       name: "Barcelona",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-60 left-40",
@@ -328,7 +328,7 @@ const FAVORITES_LOCATION = {
     {
       id: 1,
       name: "Best Shot 1",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-5 left-5",
@@ -337,7 +337,7 @@ const FAVORITES_LOCATION = {
     {
       id: 2,
       name: "Best Shot 2",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-28 right-20",
@@ -346,7 +346,7 @@ const FAVORITES_LOCATION = {
     {
       id: 4,
       name: "Best Shot 2",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-28 right-20",
@@ -355,7 +355,7 @@ const FAVORITES_LOCATION = {
     {
       id: 3,
       name: "Best Shot 3",
-      icon: "/images/image.png",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 left-60",
@@ -372,25 +372,6 @@ const photosLinks = {
   favorites: FAVORITES_LOCATION,
 };
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-];
-
 export {
   navLinks,
   navIcons,
@@ -399,7 +380,6 @@ export {
   techStack,
   socials,
   photosLinks,
-  gallery,
   aboutMe,
 };
 
@@ -422,7 +402,7 @@ const WORK_LOCATION = {
           {
             id: 201,
             name: "FinGenie Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -436,7 +416,7 @@ const WORK_LOCATION = {
           {
             id: 202,
             name: "Live Website",
-            icon: "/images/arc.png",
+            icon: "/images/arc.webp",
             kind: "file",
             fileType: "url",
             href: "https://fin-genie-five.vercel.app/",
@@ -445,7 +425,7 @@ const WORK_LOCATION = {
           {
             id: 203,
             name: "Github Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/FinGenie",
@@ -453,8 +433,8 @@ const WORK_LOCATION = {
           },
           {
             id: 204,
-            name: "FinGenie.png",
-            icon: "/images/image.png",
+            name: "FinGenie.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -475,7 +455,7 @@ const WORK_LOCATION = {
           {
             id: 210,
             name: "MediCall Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -489,7 +469,7 @@ const WORK_LOCATION = {
           {
             id: 211,
             name: "Live Demo",
-            icon: "/images/arc.png",
+            icon: "/images/arc.webp",
             kind: "file",
             fileType: "url",
             href: "https://medmeet-phi.vercel.app/",
@@ -498,7 +478,7 @@ const WORK_LOCATION = {
           {
             id: 212,
             name: "GitHub Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/MediCall",
@@ -506,8 +486,8 @@ const WORK_LOCATION = {
           },
           {
             id: 213,
-            name: "MediCall.png",
-            icon: "/images/image.png",
+            name: "MediCall.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -528,7 +508,7 @@ const WORK_LOCATION = {
           {
             id: 220,
             name: "SensAI Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -542,7 +522,7 @@ const WORK_LOCATION = {
           {
             id: 221,
             name: "Live Demo",
-            icon: "/images/arc.png",
+            icon: "/images/arc.webp",
             kind: "file",
             fileType: "url",
             href: "https://sensai-beta.vercel.app/",
@@ -551,7 +531,7 @@ const WORK_LOCATION = {
           {
             id: 222,
             name: "GitHub Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/Sensai",
@@ -559,8 +539,8 @@ const WORK_LOCATION = {
           },
           {
             id: 223,
-            name: "SensAI.png",
-            icon: "/images/image.png",
+            name: "SensAI.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -581,7 +561,7 @@ const WORK_LOCATION = {
           {
             id: 230,
             name: "Reflect Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -595,7 +575,7 @@ const WORK_LOCATION = {
           {
             id: 231,
             name: "Live Demo",
-            icon: "/images/arc.png",
+            icon: "/images/arc.webp",
             kind: "file",
             fileType: "url",
             href: "https://reflect-six-mu.vercel.app/",
@@ -604,7 +584,7 @@ const WORK_LOCATION = {
           {
             id: 232,
             name: "GitHub Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/Reflect",
@@ -612,8 +592,8 @@ const WORK_LOCATION = {
           },
           {
             id: 233,
-            name: "Reflect.png",
-            icon: "/images/image.png",
+            name: "Reflect.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -634,7 +614,7 @@ const WORK_LOCATION = {
           {
             id: 240,
             name: "PourTail Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -648,7 +628,7 @@ const WORK_LOCATION = {
           {
             id: 241,
             name: "Live Demo",
-            icon: "/images/arc.png",
+            icon: "/images/arc.webp",
             kind: "file",
             fileType: "url",
             href: "https://gsap-learining.vercel.app",
@@ -657,7 +637,7 @@ const WORK_LOCATION = {
           {
             id: 242,
             name: "GitHub Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/Pour-Tail",
@@ -665,8 +645,8 @@ const WORK_LOCATION = {
           },
           {
             id: 243,
-            name: "PourTail.png",
-            icon: "/images/image.png",
+            name: "PourTail.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -687,7 +667,7 @@ const WORK_LOCATION = {
           {
             id: 250,
             name: "Medusa Project.txt",
-            icon: "/images/txt.png",
+            icon: "/images/txt.webp",
             kind: "file",
             fileType: "txt",
             position: "top-7 left-12",
@@ -701,7 +681,7 @@ const WORK_LOCATION = {
           {
             id: 251,
             name: "GitHub Repo",
-            icon: "/images/github.png",
+            icon: "/images/github.webp",
             kind: "file",
             fileType: "url",
             href: "https://github.com/Blue-Onion/medusa",
@@ -709,8 +689,8 @@ const WORK_LOCATION = {
           },
           {
             id: 252,
-            name: "Medusa.png",
-            icon: "/images/image.png",
+            name: "Medusa.webp",
+            icon: "/images/image.webp",
             kind: "file",
             fileType: "img",
             position: "bottom-10 right-[60%]",
@@ -730,8 +710,8 @@ const ABOUT_LOCATION = {
   children: [
     {
       id: 1,
-      name: "me.png",
-      icon: "/images/image.png",
+      name: "me.webp",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
@@ -739,8 +719,8 @@ const ABOUT_LOCATION = {
     },
     {
       id: 2,
-      name: "casual-me.png",
-      icon: "/images/image.png",
+      name: "casual-me.webp",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
@@ -748,8 +728,8 @@ const ABOUT_LOCATION = {
     },
     {
       id: 3,
-      name: "conference-me.png",
-      icon: "/images/image.png",
+      name: "conference-me.webp",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
@@ -758,7 +738,7 @@ const ABOUT_LOCATION = {
     {
       id: 4,
       name: "about-me.txt",
-      icon: "/images/txt.png",
+      icon: "/images/txt.webp",
       kind: "file",
       fileType: "txt",
       position: "top-60 left-5",
@@ -785,7 +765,7 @@ const RESUME_LOCATION = {
     {
       id: 1,
       name: "Resume.pdf",
-      icon: "/images/pdf.png",
+      icon: "/images/pdf.webp",
       kind: "file",
       fileType: "pdf",
     },
@@ -801,12 +781,12 @@ const TRASH_LOCATION = {
   children: [
     {
       id: 1,
-      name: "trash1.png",
-      icon: "/images/image.png",
+      name: "trash1.webp",
+      icon: "/images/image.webp",
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/trash.png",
+      imageUrl: "/images/trash.webp",
     },
   ],
 };
@@ -820,14 +800,14 @@ export const locations = {
 
 const INITIAL_Z_INDEX = 50;
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  arc: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  contact: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  resume: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  arc: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  photos: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  terminal: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  txtfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  imgfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

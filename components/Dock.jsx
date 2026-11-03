@@ -66,34 +66,36 @@ const Dock = () => {
     dock.addEventListener("mouseleave", resetIcons);
 
     // Scale dock
-    dock.addEventListener("mouseenter", () => {
+    const scaleDockUp = () => {
       gsap.to(dock, {
         scaleX: 1.05,
         duration: 0.05,
         ease: "back",
       });
-    });
+    };
 
-    dock.addEventListener("mouseleave", () => {
+    const resetDockScale = () => {
       gsap.to(dock, {
         scaleX: 1,
         duration: 0.05,
         ease: "back",
       });
-    });
+    };
+    dock.addEventListener("mouseenter", scaleDockUp);
+    dock.addEventListener("mouseleave", resetDockScale);
 
     return () => {
       dock.removeEventListener("mousemove", handleMouseMove);
       dock.removeEventListener("mouseleave", resetIcons);
-      dock.removeEventListener("mouseenter", () => {});
-      dock.removeEventListener("mouseleave", () => {});
+      dock.removeEventListener("mouseenter", scaleDockUp);
+      dock.removeEventListener("mouseleave", resetDockScale);
     };
   }, [isMdOrLarger]);
   const toggleApp = (app) => {
     if (!app.canOpen) return;
     const window = windows[app.id];
 
-    if (window.isOpen) {
+    if (window.isOpen && !window.isMinimized) {
       focusWindow(app.id);
     } else {
       openWindow(app.id);

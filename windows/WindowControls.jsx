@@ -1,49 +1,64 @@
-"use client"
-import useWindowStore from '@/store/window'
-import { Minus, Maximize2, X, XIcon } from 'lucide-react'
-import Image from 'next/image'
-import React, { useState } from 'react'
+"use client";
+
+import useWindowStore from "@/store/window";
+import { Maximize2, Minus, X, XIcon } from "lucide-react";
+import { useState } from "react";
 
 const WindowControls = ({ target }) => {
-  const { closeWindow } = useWindowStore();
-  const [hover, setHover] = useState(null);
+  const { closeWindow, minimizeWindow, toggleMaximize, windows } = useWindowStore();
+  const [focusedControl, setFocusedControl] = useState(null);
+  const isMaximized = windows[target]?.isMaximized ?? false;
+
+  const renderControl = ({ name, className, onClick, icon }) => (
+    <button
+      key={name}
+      type="button"
+      className={`${className} flex items-center justify-center p-0 border-0`}
+      aria-label={name}
+      title={name}
+      onClick={onClick}
+      onMouseEnter={() => setFocusedControl(name)}
+      onMouseLeave={() => setFocusedControl(null)}
+      onFocus={() => setFocusedControl(name)}
+      onBlur={() => setFocusedControl(null)}
+    >
+      {focusedControl === name && icon}
+    </button>
+  );
 
   return (
     <>
-    <div id="window-controls" className="items-center gap-[6px] hidden sm:flex">
-      <div
-        className="close flex items-center justify-center"
-        onMouseEnter={() => setHover("close")}
-        onMouseLeave={() => setHover(null)}
+      <div id="window-controls" className="items-center gap-[6px] hidden sm:flex">
+        {renderControl({
+          name: "Close window",
+          className: "close",
+          onClick: () => closeWindow(target),
+          icon: <X size={10} aria-hidden="true" />,
+        })}
+        {renderControl({
+          name: "Minimize window",
+          className: "minimize",
+          onClick: () => minimizeWindow(target),
+          icon: <Minus size={10} aria-hidden="true" />,
+        })}
+        {renderControl({
+          name: isMaximized ? "Restore window size" : "Maximize window",
+          className: "maximize",
+          onClick: () => toggleMaximize(target),
+          icon: <Maximize2 size={10} aria-hidden="true" />,
+        })}
+      </div>
+      <button
+        type="button"
+        className="sm:hidden w-xs p-0 border-0 bg-transparent text-black"
+        aria-label="Close window"
+        title="Close window"
         onClick={() => closeWindow(target)}
-        >
-        {hover === "close" && <Image src="/images/close.png" alt="" width={10} height={10} className="font-bold  pointer-events-none" aria-hidden />}
-      </div>
-
-      <div
-        className="minimize flex items-center justify-center"
-        onMouseEnter={() => setHover("minimize")}
-        onMouseLeave={() => setHover(null)}
-        onClick={() => closeWindow(target)}
-        >
-        {hover === "minimize" && <Minus size={10} className="font-bold  pointer-events-none" />}
-      </div>
-
-      <div
-        className="maximize flex items-center justify-center"
-        onMouseEnter={() => setHover("maximize")}
-        onMouseLeave={() => setHover(null)}
-        >
-        {hover === "maximize" && <Maximize2 size={10} className="font-bold  pointer-events-none" />}
-      </div>
-    </div>
-    <div className="sm:hidden  w-xs">
-      <span  onClick={() => closeWindow(target)} className="font-bold    text-black">
-<XIcon className='font-bold' size={25}/>
-      </span>
-    </div>
-        </>
-  )
-}
+      >
+        <XIcon size={25} aria-hidden="true" />
+      </button>
+    </>
+  );
+};
 
 export default WindowControls;
