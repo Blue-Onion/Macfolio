@@ -7,7 +7,13 @@ import dynamic from 'next/dynamic'
 
 // Dynamically import react-pdf components with ssr disabled
 const Document = dynamic(
-    () => import('react-pdf').then((mod) => mod.Document),
+    () => import('react-pdf').then((mod) => {
+        mod.pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+            'pdfjs-dist/build/pdf.worker.min.mjs',
+            import.meta.url
+        ).toString();
+        return mod.Document;
+    }),
     { ssr: false }
 )
 const Page = dynamic(
@@ -15,12 +21,6 @@ const Page = dynamic(
     { ssr: false }
 )
 
-// Configure PDF.js worker (only on client side)
-if (typeof window !== 'undefined') {
-    import('react-pdf').then((mod) => {
-        mod.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${mod.pdfjs.version}/build/pdf.worker.min.mjs`
-    })
-}
 const Resume = () => {
     return (
         <>
