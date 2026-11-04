@@ -1,7 +1,7 @@
 "use client"
 import WindowWrapper from '@/hoc/WindowWrapper'
 import WindowControls from './WindowControls'
-import { locations } from '@/data'
+import { locations, type FileSystemNode, type FolderNode } from '@/data'
 import useLocationStore from '@/store/location'
 import Image from 'next/image'
 import clsx from 'clsx'
@@ -10,7 +10,7 @@ import { MoveLeftIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 const Finder = () => {
     const { setActiveLocation, activeLocation } = useLocationStore()
-    const [breadCrumb, setBreadCrumb] = useState(() => [activeLocation])
+    const [breadCrumb, setBreadCrumb] = useState<FolderNode[]>(() => [activeLocation])
     const { openWindow } = useWindowStore()
     const [isPhone, setIsPhone] = useState(false)
 
@@ -19,7 +19,7 @@ const Finder = () => {
         if (typeof window !== "undefined" && window.innerWidth < 768) {
             setTimeout(() => {
                 setIsPhone(true)
-                const ROOT_LOCATION = {
+                const ROOT_LOCATION: FolderNode = {
                     id: 0,
                     type: "root",
                     name: "Portfolio",
@@ -39,15 +39,19 @@ const Finder = () => {
             setActiveLocation(lastItem)
         }
     }, [breadCrumb, setActiveLocation, activeLocation])
-    const getItemIcon = (item) => {
+    const getItemIcon = (item: FileSystemNode) => {
         if (!isPhone) return item.icon
         return item.kind === "folder" ? "/images/folder.jpg" : item.icon
     }
-    const openItem = (item) => {
+    const openItem = (item: FileSystemNode | undefined) => {
 
         if (!item) return
         if (item.id === breadCrumb[breadCrumb.length - 2]?.id) {
             setBreadCrumb(breadCrumb.slice(0, breadCrumb.length - 1))
+            return
+        }
+        if (item.kind === "folder") {
+            setBreadCrumb([...breadCrumb, item])
             return
         }
         if (item.fileType === "pdf") {
@@ -56,24 +60,19 @@ const Finder = () => {
         if (item.fileType === "url") {
             return window.open(item.href, "_blank")
         }
-        if (item.kind === "folder") {
-            setBreadCrumb([...breadCrumb, item])
-            return
-        }
-
-
-        return openWindow(`${item.fileType}${item.kind}`, item)
+        if (item.fileType === "txt") return openWindow("txtfile", item)
+        if (item.fileType === "img") return openWindow("imgfile", item)
 
 
     }
 
-    const handleSidebarClick = (item) => {
+    const handleSidebarClick = (item: FolderNode) => {
 
         setBreadCrumb([item])
         setActiveLocation(item)
     }
 
-    const renderList = (name, list) => {
+    const renderList = (name: string, list: FileSystemNode[]) => {
         return <div className="p-0">
 
             <h3 className='font-bold text-gray-500 text-md'>
@@ -82,7 +81,7 @@ const Finder = () => {
             <ul>
                 {list.map((item) => {
                     return (
-                        <li key={item.id} className={clsx(item.id === activeLocation.id ? "active" : "not-active")} onClick={() => handleSidebarClick(item)}>
+                        <li key={item.id} className={clsx(item.id === activeLocation.id ? "active" : "not-active")} onClick={() => item.kind === "folder" && handleSidebarClick(item)}>
                             <Image
                                 className={clsx(item.id === activeLocation.id ? "" : "filter brightness-0 saturate-100")} height={18} width={18} src={name === "Work" ? "/images/sidebarFolder.jpg" : item.icon} alt="" />
                             <p className='text-sm truncate font-medium'>{item.name}</p>
@@ -111,7 +110,7 @@ const Finder = () => {
                     <WindowControls target="finder" />
 
                     <h2 className="absolute left-1/2 -translate-x-1/2 text-gray-500 font-bold pointer-events-none">
-                        {activeLocation?.name}
+                        {activeLocation.name}
                     </h2>
                 </div>
                 <div className="controls p-2 md:hidden">
@@ -122,7 +121,7 @@ const Finder = () => {
                     </button>
                 </div>
                 <ul className="content ">
-                    {activeLocation?.children.map((item) => {
+                    {activeLocation.children.map((item) => {
 
 
 

@@ -1,25 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { locations } from "@/data";
+import { locations, type FolderNode, type ImageFileItem, type TextFileItem, type UrlFileItem } from "@/data";
 import { projectSlug, siteUrl, author } from "@/lib/site";
 
-const projects = locations.work.children;
+const projects = locations.work.children.filter((item): item is FolderNode => item.kind === "folder");
 
-export function generateStaticParams() {
+export function generateStaticParams(): { slug: string }[] {
   return projects.map((project) => ({ slug: projectSlug(project.name) }));
 }
 
-const getProject = (slug) => projects.find((p) => projectSlug(p.name) === slug);
+const getProject = (slug: string) => projects.find((p) => projectSlug(p.name) === slug);
 
-const getProjectMeta = (project) => {
-  const txt = project.children.find((c) => c.fileType === "txt");
-  const urls = project.children.filter((c) => c.fileType === "url");
-  const screenshot = project.children.find((c) => c.fileType === "img");
+const getProjectMeta = (project: FolderNode) => {
+  const txt = project.children.find((item): item is TextFileItem => item.kind === "file" && item.fileType === "txt");
+  const urls = project.children.filter((item): item is UrlFileItem => item.kind === "file" && item.fileType === "url");
+  const screenshot = project.children.find((item): item is ImageFileItem => item.kind === "file" && item.fileType === "img");
   return { description: txt?.description ?? [], urls, screenshot: screenshot?.imageUrl };
 };
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
@@ -42,13 +42,15 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ProjectDetailsPage({ params }) {
+export default async function ProjectDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
 
   const { description, urls, screenshot } = getProjectMeta(project);
 
+  const repository = urls.find((url) => url.name.toLowerCase().includes("github"));
+  const demo = urls.find((url) => url.name.toLowerCase().includes("demo") || url.name.toLowerCase().includes("website"));
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -56,12 +58,8 @@ export default async function ProjectDetailsPage({ params }) {
     description: description.join(" "),
     author: { "@type": "Person", name: author },
     image: screenshot ? `${siteUrl}${screenshot}` : undefined,
-    ...(urls.some((u) => u.name.toLowerCase().includes("github")) && {
-      codeRepository: urls.find((u) => u.name.toLowerCase().includes("github")).href,
-    }),
-    ...(urls.some((u) => u.name.toLowerCase().includes("demo") || u.name.toLowerCase().includes("website")) && {
-      url: urls.find((u) => u.name.toLowerCase().includes("demo") || u.name.toLowerCase().includes("website")).href,
-    }),
+    ...(repository ? { codeRepository: repository.href } : {}),
+    ...(demo ? { url: demo.href } : {}),
   };
 
   return (

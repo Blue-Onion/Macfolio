@@ -1,5 +1,5 @@
 "use client"
-import { locations } from '@/data'
+import { locations, type FolderNode } from '@/data'
 import useLocationStore from '@/store/location'
 import useWindowStore from '@/store/window'
 import { useGSAP } from '@gsap/react'
@@ -12,7 +12,7 @@ import React from 'react'
 import { projectSlug } from '@/lib/site'
 
 const Home = () => {
-    const project = locations.work.children;
+    const project = locations.work.children.filter((item): item is FolderNode => item.kind === "folder");
     const { setActiveLocation } = useLocationStore();
     const { openWindow } = useWindowStore();
     useGSAP(() => {
@@ -22,7 +22,7 @@ const Home = () => {
         })
         return () => instances?.forEach((d) => d.kill())
     }, [])
-    const openProject = (project) => {
+    const openProject = (project: FolderNode) => {
         setActiveLocation(project);
         openWindow("finder");
     }

@@ -1,7 +1,18 @@
-import { INITIAL_Z_INDEX, WINDOW_CONFIG } from "@/data";
+import { INITIAL_Z_INDEX, WINDOW_CONFIG, type FileNode, type WindowKey, type WindowState } from "@/data";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-const useWindowStore = create(
+
+type WindowStore = {
+  windows: Record<WindowKey, WindowState>;
+  nextZindex: number;
+  openWindow: (windowKey: WindowKey, data?: FileNode | null) => void;
+  closeWindow: (windowKey: WindowKey) => void;
+  focusWindow: (windowKey: WindowKey) => void;
+  minimizeWindow: (windowKey: WindowKey) => void;
+  toggleMaximize: (windowKey: WindowKey) => void;
+};
+
+const useWindowStore = create<WindowStore>()(
   immer((set) => ({
     windows: WINDOW_CONFIG,
     nextZindex: INITIAL_Z_INDEX + 1,

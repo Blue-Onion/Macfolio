@@ -1,14 +1,20 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-import { photosLinks } from "@/data";
+import { photosLinks, type FolderNode } from "@/data";
 
 const defaultGalleryLocation = photosLinks.library;
-export const useGalleryStore = create(
+type GalleryStore = {
+  activeGalleryLocation: FolderNode;
+  setActiveGalleryLocation: (location: FolderNode) => void;
+  resetActiveGalleryLocation: () => void;
+};
+
+export const useGalleryStore = create<GalleryStore>()(
   immer((set) => ({
     activeGalleryLocation: defaultGalleryLocation,
-    setActiveGalleryLocation: (Gallerylocations = null) => {
+    setActiveGalleryLocation: (location) => {
       set((state) => {
-        state.activeGalleryLocation = Gallerylocations;
+        state.activeGalleryLocation = location;
       });
     },
     resetActiveGalleryLocation: () => {

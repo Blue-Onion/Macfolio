@@ -8,7 +8,7 @@ import Image from 'next/image';
 const ImgFile = () => {
   const { windows } = useWindowStore();
   const data = windows?.imgfile?.data;
-  if (!data) return;
+  if (!data || data.kind !== "file" || data.fileType !== "img") return null;
   const { imageUrl, description } = data;
 
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { locations } from "@/data";
+import { locations, type FolderNode, type TextFileItem, type UrlFileItem, type ImageFileItem } from "@/data";
 import { projectSlug, author } from "@/lib/site";
 
 const title = `Projects by ${author}`;
@@ -15,10 +15,12 @@ export const metadata = {
 };
 
 // Every project folder has a `.txt` child with the description and `url` children with links.
-const getProjectMeta = (project) => {
-  const txt = project.children.find((c) => c.fileType === "txt");
-  const urls = project.children.filter((c) => c.fileType === "url");
-  const screenshot = project.children.find((c) => c.fileType === "img");
+const projects = locations.work.children.filter((item): item is FolderNode => item.kind === "folder");
+
+const getProjectMeta = (project: FolderNode) => {
+  const txt = project.children.find((item): item is TextFileItem => item.kind === "file" && item.fileType === "txt");
+  const urls = project.children.filter((item): item is UrlFileItem => item.kind === "file" && item.fileType === "url");
+  const screenshot = project.children.find((item): item is ImageFileItem => item.kind === "file" && item.fileType === "img");
   return {
     description: txt?.description ?? [],
     urls,
@@ -27,8 +29,6 @@ const getProjectMeta = (project) => {
 };
 
 export default function ProjectsPage() {
-  const projects = locations.work.children;
-
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
       <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{title}</h1>

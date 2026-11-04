@@ -9,7 +9,7 @@ import Image from 'next/image';
 const TextFile = () => {
     const { windows } = useWindows();
     const data = windows?.txtfile?.data;
-    if (!data) return;
+    if (!data || data.kind !== "file" || data.fileType !== "txt") return null;
     const { description, image, highlightBoundaryLines } = data;
     return (
         <>

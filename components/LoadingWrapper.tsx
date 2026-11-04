@@ -1,14 +1,15 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+import type { ReactNode, CSSProperties } from 'react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/all'
 
 
-export default function LoadingWrapper({ children }) {
+export default function LoadingWrapper({ children }: { children: ReactNode }) {
     const [isReady, setIsReady] = useState(false)
-    const contentRef = useRef(null)
-    const maskRef = useRef(null)
+    const contentRef = useRef<HTMLDivElement | null>(null)
+    const maskRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         setTimeout(() => setIsReady(true), 0)
@@ -39,7 +40,7 @@ export default function LoadingWrapper({ children }) {
             opacity: 0,
             duration: 0.2,
             ease: "back.in",
-            onComplete: () => gsap.set(maskRef.current, { display: 'none' })
+            onComplete: () => { gsap.set(maskRef.current, { display: 'none' }) }
         })
 
         tl.to(contentRef.current, {
@@ -101,7 +102,7 @@ export default function LoadingWrapper({ children }) {
                 className="fixed inset-0 flex items-center justify-center bg-black z-9999"
                 style={{
                     '--mask-size': '20%',
-                }}
+                } as CSSProperties}
             >
                 <div
                     className="absolute inset-0"

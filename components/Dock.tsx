@@ -9,7 +9,7 @@ import { Tooltip } from "react-tooltip";
 
 const Dock = () => {
   const { openWindow, focusWindow, windows } = useWindowStore();
-  const dockRef = useRef(null);
+  const dockRef = useRef<HTMLDivElement | null>(null);
   const [isMdOrLarger, setIsMdOrLarger] = useState(false);
 
   // Check if screen size is md or larger (768px)
@@ -33,7 +33,7 @@ const Dock = () => {
     const dock = dockRef.current;
     if (!dock || !isMdOrLarger) return () => {};
     const icons = dock.querySelectorAll(".dock-icon");
-    const animateIcons = (mouseX) => {
+    const animateIcons = (mouseX: number) => {
       const { left } = dock.getBoundingClientRect();
       icons.forEach((icon) => {
         const { left: l, width: w } = icon.getBoundingClientRect();
@@ -48,7 +48,7 @@ const Dock = () => {
         });
       });
     };
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { left } = dock.getBoundingClientRect();
       animateIcons(e.clientX - left);
     };
@@ -91,7 +91,7 @@ const Dock = () => {
       dock.removeEventListener("mouseleave", resetDockScale);
     };
   }, [isMdOrLarger]);
-  const toggleApp = (app) => {
+  const toggleApp = (app: (typeof dockApps)[number]) => {
     if (!app.canOpen) return;
     const window = windows[app.id];
 
@@ -132,7 +132,7 @@ const Dock = () => {
                     width={100}
                     height={150}
                   />
-                  {app.isOpen && <span className="">.</span>}
+                  {windows[app.id].isOpen && <span className="">.</span>}
                 </button>
               </div>
             );

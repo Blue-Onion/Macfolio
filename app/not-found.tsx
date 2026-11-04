@@ -8,8 +8,8 @@ import styles from './not-found.module.css'
 import clsx from 'clsx'
 
 const NotFound = () => {
-    const buttonRef = useRef(null)
-    const flairRef = useRef(null)
+    const buttonRef = useRef<HTMLDivElement | null>(null)
+    const flairRef = useRef<HTMLDivElement | null>(null)
 
 useGSAP(() => {
     const button = buttonRef.current;
@@ -20,14 +20,14 @@ useGSAP(() => {
     const xSet = gsap.quickSetter(flair, "xPercent");
     const ySet = gsap.quickSetter(flair, "yPercent");
 
-    const getXY = (e) => {
+    const getXY = (e: MouseEvent) => {
         const { left, top, width, height } = button.getBoundingClientRect();
         const x = ((e.clientX - left) / width) * 100;
         const y = ((e.clientY - top) / height) * 100;
         return { x, y };
     };
 
-    const handleMouseEnter = (e) => {
+    const handleMouseEnter = (e: MouseEvent) => {
         const { x, y } = getXY(e);
 
         xSet(x);
@@ -40,7 +40,7 @@ useGSAP(() => {
         });
     };
 
-    const handleMouseLeave = (e) => {
+    const handleMouseLeave = (e: MouseEvent) => {
         const { x, y } = getXY(e);
 
         gsap.killTweensOf(flair);
@@ -54,7 +54,7 @@ useGSAP(() => {
         });
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         const { x, y } = getXY(e);
 
         gsap.to(flair, {
@@ -75,7 +75,7 @@ useGSAP(() => {
         button.removeEventListener("mousemove", handleMouseMove);
     };
 }, []);
-    const renderText = (text, className, baseWeight) => {
+    const renderText = (text: string, className: string, baseWeight: number) => {
         return [...text].map((char, i) => (
             <span key={i} className={className} style={{ fontVariationSettings: `"wght" ${baseWeight}` }}>
                 {char === " " ? "\u00a0" : char}

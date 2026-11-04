@@ -1,5 +1,6 @@
 import { Inter, Roboto_Mono, Georama, Archivo_Black } from "next/font/google";
 import "./globals.css";
+import type { ReactNode } from "react";
 
 import StructuredData from "@/components/StructuredData";
 import {
@@ -100,7 +101,7 @@ export const viewport = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" style={{ backgroundColor: "#000" }}>
       <body

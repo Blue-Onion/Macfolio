@@ -23,7 +23,7 @@ export const routes = [
 ];
 
 // "FinGenie" -> "fingenie". Shared by /projects/[slug] and sitemap.
-export const projectSlug = (name) =>
+export const projectSlug = (name: string) =>
   name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 // Identity links for JSON-LD sameAs (entity linking).

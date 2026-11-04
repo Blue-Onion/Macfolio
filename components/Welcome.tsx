@@ -9,14 +9,16 @@ const FONT_WEIGHT = {
   title: { min: 500, max: 900, base: 500 },
 };
 
-const setUpHover = (cont, type) => {
+type HoverType = keyof typeof FONT_WEIGHT;
+
+const setUpHover = (cont: HTMLElement | null, type: HoverType) => {
   if (!cont) return () => {};
 
   const letters = Array.from(cont.querySelectorAll(".letter"));
   const { min, max, base } = FONT_WEIGHT[type];
 
-  let letterCenters = [];
-  let rafId = null;
+  let letterCenters: number[] = [];
+  let rafId: number | null = null;
 
   const calculateCenters = () => {
     const { left } = cont.getBoundingClientRect();
@@ -29,7 +31,7 @@ const setUpHover = (cont, type) => {
   calculateCenters();
   window.addEventListener("resize", calculateCenters);
 
-  const animateLetter = (letter, weight, duration = 0.25) => {
+  const animateLetter = (letter: Element, weight: number, duration = 0.25) => {
     gsap.to(letter, {
       duration,
       ease: "power2.out",
@@ -37,7 +39,7 @@ const setUpHover = (cont, type) => {
     });
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     const { left } = cont.getBoundingClientRect();
     const mouseX = e.clientX - left;
 
@@ -72,7 +74,7 @@ const setUpHover = (cont, type) => {
   };
 };
 
-const renderText = (text, className, baseWeight) => {
+const renderText = (text: string, className: string, baseWeight: number) => {
   const words = text.split(" ");
   return words.map((word, wi) => (
     <span key={wi} className="welcome-word">

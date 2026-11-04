@@ -3,15 +3,16 @@ import useWindowStore from '@/store/window'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { type ComponentType, useLayoutEffect, useRef } from 'react'
+import type { WindowKey } from '@/data'
 
 gsap.registerPlugin(Draggable)
 
-const WindowWrapper = (Component, windowKey) => {
-  const Wrapped = (props) => {
+const WindowWrapper = <Props extends object>(Component: ComponentType<Props>, windowKey: WindowKey) => {
+  const Wrapped = (props: Props) => {
     const { focusWindow, windows } = useWindowStore()
     const { isOpen, isMinimized, isMaximized, zIndex } = windows[windowKey];
-    const ref = useRef(null);
+    const ref = useRef<HTMLElement | null>(null);
     useGSAP(() => {
       const el = ref.current;
       if (!el) return;

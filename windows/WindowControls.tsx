@@ -2,14 +2,22 @@
 
 import useWindowStore from "@/store/window";
 import { Maximize2, Minus, X, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+import type { WindowKey } from "@/data";
 
-const WindowControls = ({ target }) => {
+type WindowControlProps = {
+  name: string;
+  className: string;
+  onClick: () => void;
+  icon: ReactNode;
+};
+
+const WindowControls = ({ target }: { target: WindowKey }) => {
   const { closeWindow, minimizeWindow, toggleMaximize, windows } = useWindowStore();
-  const [focusedControl, setFocusedControl] = useState(null);
+  const [focusedControl, setFocusedControl] = useState<string | null>(null);
   const isMaximized = windows[target]?.isMaximized ?? false;
 
-  const renderControl = ({ name, className, onClick, icon }) => (
+  const renderControl = ({ name, className, onClick, icon }: WindowControlProps) => (
     <button
       key={name}
       type="button"

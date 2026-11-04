@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { aboutMe, techStack, achievements, locations, socials } from "@/data";
+import { aboutMe, techStack, achievements, locations, socials, type FolderNode, type TextFileItem } from "@/data";
 import { projectSlug, author, authorEmail, authorLocation } from "@/lib/site";
 
 const title = `Resume — ${author}`;
@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default function ResumePage() {
-  const projects = locations.work.children;
+  const projects = locations.work.children.filter((project): project is FolderNode => project.kind === "folder");
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
@@ -74,7 +74,7 @@ export default function ResumePage() {
                 </Link>
               </h3>
               <p className="mt-1 text-gray-700 leading-relaxed">
-                {project.children.find((c) => c.fileType === "txt")?.description?.[0]}
+                {project.children.find((child): child is TextFileItem => child.kind === "file" && child.fileType === "txt")?.description[0]}
               </p>
             </li>
           ))}

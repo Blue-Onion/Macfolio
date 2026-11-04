@@ -1,3 +1,88 @@
+export type TextFileItem = {
+  id: number;
+  name: string;
+  icon: string;
+  kind: "file";
+  fileType: "txt";
+  position?: string;
+  subtitle?: string;
+  image?: string;
+  heading?: string;
+  highlightBoundaryLines?: boolean;
+  description: string[];
+};
+
+export type ImageFileItem = {
+  id: number;
+  name: string;
+  icon: string;
+  kind: "file";
+  fileType: "img";
+  position?: string;
+  imageUrl: string;
+  description?: string;
+};
+
+export type UrlFileItem = {
+  id: number;
+  name: string;
+  icon: string;
+  kind: "file";
+  fileType: "url";
+  position?: string;
+  href: string;
+};
+
+export type PdfFileItem = {
+  id: number;
+  name: string;
+  icon: string;
+  kind: "file";
+  fileType: "pdf";
+  position?: string;
+};
+
+export type FileNode = TextFileItem | ImageFileItem | UrlFileItem | PdfFileItem;
+
+export type FolderNode = {
+  id: number;
+  type?: string;
+  name: string;
+  icon: string;
+  kind: "folder";
+  position?: string;
+  windowPosition?: string;
+  children: FileSystemNode[];
+};
+
+export type FileSystemNode = FolderNode | FileNode;
+
+export type WindowKey = "finder" | "contact" | "resume" | "arc" | "photos" | "terminal" | "txtfile" | "imgfile";
+
+export type WindowState = {
+  isOpen: boolean;
+  isMinimized: boolean;
+  isMaximized: boolean;
+  zIndex: number;
+  data: FileNode | null;
+};
+
+export type Achievement = {
+  id: number;
+  title: string;
+  date: string;
+  image: string;
+  link: string;
+  username?: string;
+  description?: string;
+};
+
+export type TechGroup = { category: string; items: string[] };
+export type SocialLink = { id: number; text: string; icon: string; bg: string; link: string };
+
+type NavLink = { id: number; name: string; type: WindowKey; href: string };
+type DockApp = { id: WindowKey; name: string; icon: string; canOpen: boolean };
+
 const navLinks = [
   {
     id: 1,
@@ -17,9 +102,9 @@ const navLinks = [
     type: "resume",
     href: "/resume",
   },
-];
+] satisfies NavLink[];
 
-const aboutMe = {
+const aboutMe: TextFileItem & { image: string; subtitle: string } = {
   id: 4,
   name: "about-me.txt",
   icon: "/images/txt.webp",
@@ -53,7 +138,7 @@ const navIcons = [
     id: 4,
     img: "/icons/mode.svg",
   },
-];
+] satisfies { id: number; img: string }[];
 
 const dockApps = [
   {
@@ -86,9 +171,9 @@ const dockApps = [
     icon: "photos.jpg",
     canOpen: true,
   },
-];
+] satisfies DockApp[];
 
-const achievements = [
+const achievements: Achievement[] = [
   {
     id: 1,
     title: "LeetCode Competitive Programming",
@@ -126,7 +211,7 @@ const achievements = [
   },
 ];
 
-const techStack = [
+const techStack: TechGroup[] = [
     {
       category: "Languages",
       items: ["Go", "Python", "JavaScript", "SQL", "HTML", "CSS"],
@@ -149,7 +234,7 @@ const techStack = [
     },
   ];
 
-const socials = [
+const socials: SocialLink[] = [
   {
     id: 1,
     text: "Github",
@@ -180,7 +265,7 @@ const socials = [
   },
 ];
 
-const LIBRARY_LOCATION = {
+const LIBRARY_LOCATION: FolderNode = {
   id: 1,
   type: "library",
   name: "Library",
@@ -226,7 +311,7 @@ const LIBRARY_LOCATION = {
   ],
 };
 
-const MEMORIES_LOCATION = {
+const MEMORIES_LOCATION: FolderNode = {
   id: 2,
   type: "memories",
   name: "Memories",
@@ -272,7 +357,7 @@ const MEMORIES_LOCATION = {
   ],
 };
 
-const PLACES_LOCATION = {
+const PLACES_LOCATION: FolderNode = {
   id: 3,
   type: "places",
   name: "Places",
@@ -318,7 +403,7 @@ const PLACES_LOCATION = {
   ],
 };
 
-const FAVORITES_LOCATION = {
+const FAVORITES_LOCATION: FolderNode = {
   id: 5,
   type: "favorites",
   name: "Favorites",
@@ -364,7 +449,7 @@ const FAVORITES_LOCATION = {
   ],
 };
 
-const photosLinks = {
+const photosLinks: Record<string, FolderNode> = {
   library: LIBRARY_LOCATION,
   memories: MEMORIES_LOCATION,
   places: PLACES_LOCATION,
@@ -383,7 +468,7 @@ export {
   aboutMe,
 };
 
-const WORK_LOCATION = {
+const WORK_LOCATION: FolderNode = {
     id: 100,
     type: "work",
     name: "Work",
@@ -701,7 +786,7 @@ const WORK_LOCATION = {
     ],
   };
 
-const ABOUT_LOCATION = {
+const ABOUT_LOCATION: FolderNode = {
   id: 2,
   type: "about",
   name: "About me",
@@ -755,7 +840,7 @@ const ABOUT_LOCATION = {
   ],
 };
 
-const RESUME_LOCATION = {
+const RESUME_LOCATION: FolderNode = {
   id: 3,
   type: "resume",
   name: "Resume",
@@ -772,7 +857,7 @@ const RESUME_LOCATION = {
   ],
 };
 
-const TRASH_LOCATION = {
+const TRASH_LOCATION: FolderNode = {
   id: 4,
   type: "trash",
   name: "Trash",
@@ -791,15 +876,15 @@ const TRASH_LOCATION = {
   ],
 };
 
-export const locations = {
+export const locations: Record<"work" | "about" | "resume" | "trash", FolderNode> = {
   work: WORK_LOCATION,
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
 };
 
-const INITIAL_Z_INDEX = 50;
-const WINDOW_CONFIG = {
+export const INITIAL_Z_INDEX = 50;
+export const WINDOW_CONFIG: Record<WindowKey, WindowState> = {
   finder: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -809,5 +894,3 @@ const WINDOW_CONFIG = {
   txtfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
-
-export { INITIAL_Z_INDEX, WINDOW_CONFIG };

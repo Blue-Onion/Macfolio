@@ -3,8 +3,9 @@ import SiteNav from "@/components/SiteNav";
 import Link from "next/link";
 import { author, routes } from "@/lib/site";
 import { authorEmail } from "@/lib/site";
+import type { ReactNode } from "react";
 
-export default function PagesLayout({ children }) {
+export default function PagesLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-dvh bg-white text-gray-900 flex flex-col">
       <SiteNav />

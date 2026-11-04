@@ -3,7 +3,7 @@ import WindowWrapper from '@/hoc/WindowWrapper'
 import WindowControls from './WindowControls'
 import useGalleryStore from '@/store/gallery'
 import useWindowStore from '@/store/window'
-import { photosLinks } from '@/data'
+import { photosLinks, type FileSystemNode, type FolderNode, type ImageFileItem } from '@/data'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -13,7 +13,7 @@ const Gallery = () => {
     const { openWindow } = useWindowStore();
 
 
-    const renderCategories = (name, list) => {
+    const renderCategories = (name: string, list: FolderNode[]) => {
         return <div className="space-y-4 p-1">
             <h3 className='font-semibold text-gray-500 text-sm'>
                 {name}
@@ -42,10 +42,8 @@ loading='lazy'
         </div>
     }
 
-    const openItem = (item) => {
-        if (item.fileType === "img") {
-            console.log(item);
-            
+    const openItem = (item: FileSystemNode) => {
+        if (item.kind === "file" && item.fileType === "img") {
             return openWindow("imgfile", item)
         }
         if (item.kind === "folder") {
@@ -64,7 +62,7 @@ loading='lazy'
                 </div>
                 <div className="gallery flex-1 overflow-auto">
                     <ul>
-                        {activeGalleryLocation?.children?.map((item) => {
+                        {activeGalleryLocation.children.filter((item): item is ImageFileItem => item.kind === "file" && item.fileType === "img").map((item) => {
                             
                             return (
                                 <li key={item.id} className={clsx(item.id === activeGalleryLocation?.id ? "active" : "not-active")} onClick={() => openItem(item)}>
